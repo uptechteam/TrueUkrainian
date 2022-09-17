@@ -42,16 +42,7 @@ public final class AppCoordinator {
 
     private func createTabBarCoordinator() -> Coordinating {
         let coordinator = TabBarCoordinator()
-        coordinator.delegate = self
         childCoordinators.append(coordinator)
         return coordinator
-    }
-}
-
-// MARK: - TabBar Coordinator Delegate
-
-extension AppCoordinator: TabBarCoordinatorDelegate {
-    func tabBarCoordinatorDidFinish(coordinator: TabBarCoordinator) {
-        start()
     }
 }
