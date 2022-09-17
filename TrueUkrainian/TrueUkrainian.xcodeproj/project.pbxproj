@@ -489,7 +489,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ESG9RMF2GN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrueUkrainian/Info.plist;
+				INFOPLIST_FILE = TrueUkrainian/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "True Ukrainian";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -519,7 +519,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ESG9RMF2GN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TrueUkrainian/Info.plist;
+				INFOPLIST_FILE = TrueUkrainian/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "True Ukrainian";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
