@@ -36,6 +36,7 @@
 		86DF330C28D6412B00F30F3A /* CALayer+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF330B28D6412B00F30F3A /* CALayer+TU.swift */; };
 		86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF330D28D6415100F30F3A /* UIView+TU.swift */; };
 		86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331028D6464700F30F3A /* UIImage+Generated.swift */; };
+		86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331228D6492500F30F3A /* UIColor+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		86DF330B28D6412B00F30F3A /* CALayer+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+TU.swift"; sourceTree = "<group>"; };
 		86DF330D28D6415100F30F3A /* UIView+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TU.swift"; sourceTree = "<group>"; };
 		86DF331028D6464700F30F3A /* UIImage+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Generated.swift"; sourceTree = "<group>"; };
+		86DF331228D6492500F30F3A /* UIColor+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF331028D6464700F30F3A /* UIImage+Generated.swift */,
+				86DF331228D6492500F30F3A /* UIColor+Generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DF330A28D63FA600F30F3A /* AnyIdentifiable.swift in Sources */,
+				86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */,
 				86DF32CF28D63C3C00F30F3A /* AppCoordinator.swift in Sources */,
 				86DF32FF28D63F1900F30F3A /* HomeStore.swift in Sources */,
 				86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */,

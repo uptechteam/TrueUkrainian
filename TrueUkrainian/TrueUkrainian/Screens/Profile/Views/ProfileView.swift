@@ -33,7 +33,7 @@ final class ProfileView: UIView {
     }
 
     private func setupContentView() {
-        backgroundColor = .blue
+        backgroundColor = .bg
     }
 
     // MARK: - Public methods

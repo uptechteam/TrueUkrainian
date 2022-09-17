@@ -33,7 +33,7 @@ final class KnowledgeView: UIView {
     }
 
     private func setupContentView() {
-        backgroundColor = .red
+        backgroundColor = .bg
     }
 
     // MARK: - Public methods

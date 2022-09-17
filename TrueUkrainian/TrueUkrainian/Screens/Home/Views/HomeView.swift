@@ -33,7 +33,7 @@ final class HomeView: UIView {
     }
 
     private func setupContentView() {
-        backgroundColor = .yellow
+        backgroundColor = .bg
     }
 
     // MARK: - Public methods
