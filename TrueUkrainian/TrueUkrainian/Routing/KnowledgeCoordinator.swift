@@ -40,6 +40,7 @@ final class KnowledgeCoordinator: Coordinating {
         let tabBarItem = UITabBarItem(title: nil, image: .knowledgeDeselected, selectedImage: .knowledgeSelected)
         tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
         navigationController.tabBarItem = tabBarItem
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 
     // MARK: - Public methods

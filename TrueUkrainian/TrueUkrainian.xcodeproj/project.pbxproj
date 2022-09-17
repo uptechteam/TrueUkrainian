@@ -45,6 +45,7 @@
 		86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332228D64F1200F30F3A /* CategoryProps.swift */; };
 		86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332328D64F1200F30F3A /* CategoryStore.swift */; };
 		86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332C28D664C900F30F3A /* BaseNavigationController.swift */; };
+		86DF332F28D6682F00F30F3A /* KnowledgeCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332E28D6682F00F30F3A /* KnowledgeCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		86DF332228D64F1200F30F3A /* CategoryProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryProps.swift; sourceTree = "<group>"; };
 		86DF332328D64F1200F30F3A /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 		86DF332C28D664C900F30F3A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		86DF332E28D6682F00F30F3A /* KnowledgeCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF32F328D63F1900F30F3A /* KnowledgeView.swift */,
+				86DF332E28D6682F00F30F3A /* KnowledgeCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				86DF331728D64E8500F30F3A /* Category.swift in Sources */,
 				86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */,
 				86DF32D928D63DEE00F30F3A /* ProfileCoordinator.swift in Sources */,
+				86DF332F28D6682F00F30F3A /* KnowledgeCategoryView.swift in Sources */,
 				86DF330128D63F1900F30F3A /* HomeActionCreator.swift in Sources */,
 				86DF330228D63F1900F30F3A /* KnowledgeViewController.swift in Sources */,
 				86DF32FC28D63F1900F30F3A /* ProfileActionCreator.swift in Sources */,
