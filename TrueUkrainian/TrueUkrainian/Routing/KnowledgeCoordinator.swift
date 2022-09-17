@@ -33,9 +33,11 @@ final class KnowledgeCoordinator: Coordinating {
     // MARK: - Set up
 
     private func setupUI() {
-        navigationController.tabBarItem = UITabBarItem(
-            title: "Знання", image: nil, selectedImage: nil
+        let tabBarItem = UITabBarItem(
+            title: nil, image: .knowledgeDeselected, selectedImage: .knowledgeSelected
         )
+        tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
+        navigationController.tabBarItem = tabBarItem
     }
 
     // MARK: - Public methods

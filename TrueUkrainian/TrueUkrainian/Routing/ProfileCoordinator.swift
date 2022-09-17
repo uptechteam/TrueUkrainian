@@ -33,9 +33,11 @@ final class ProfileCoordinator: Coordinating {
     // MARK: - Set up
 
     private func setupUI() {
-        navigationController.tabBarItem = UITabBarItem(
-            title: "Профіль", image: nil, selectedImage: nil
+        let tabBarItem = UITabBarItem(
+            title: nil, image: .profileDeselected, selectedImage: .profileSelected
         )
+        tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
+        navigationController.tabBarItem = tabBarItem
     }
 
     // MARK: - Public methods
