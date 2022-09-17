@@ -1,55 +1,57 @@
 //
-//  KnowledgeStore.swift
+//  KnowledgeCategoryStore.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
 //
 
-extension KnowledgeViewController {
+extension KnowledgeCategoryViewController {
 
     typealias Store = ReduxStore<State, Action>
 
     struct State: Equatable {
+        let category: Category
         var route: AnyIdentifiable<Route>?
     }
 
     enum Action {
-        case categoryTapped(Category)
+        case mock
     }
 
     enum Route {
-        case showCategory(Category)
+
     }
 
-    struct Dependencies {
+    public struct Dependencies {
         public init() {
 
         }
     }
 
-    static func makeStore(dependencies: Dependencies) -> Store {
+    static func makeStore(dependencies: Dependencies, category: Category) -> Store {
         return Store(
-            initialState: makeInitialState(dependencies: dependencies),
+            initialState: makeInitialState(dependencies: dependencies, category: category),
             reducer: reduce,
             middlewares: []
         )
     }
 
-    private static func makeInitialState(dependencies: Dependencies) -> State {
+    private static func makeInitialState(dependencies: Dependencies, category: Category) -> State {
         return State(
+            category: category,
             route: nil
         )
     }
 }
 
-extension KnowledgeViewController {
+extension KnowledgeCategoryViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        var newState = state
+        let newState = state
 
         switch action {
-        case .categoryTapped(let category):
-            newState.route = .init(value: .showCategory(category))
+        case .mock:
+            break
         }
 
         return newState

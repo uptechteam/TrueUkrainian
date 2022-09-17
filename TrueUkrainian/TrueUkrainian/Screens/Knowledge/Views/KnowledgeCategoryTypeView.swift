@@ -1,5 +1,5 @@
 //
-//  KnowledgeCategoryView.swift
+//  KnowledgeCategoryTypeView.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -7,11 +7,7 @@
 
 import UIKit
 
-final class KnowledgeCategoryView: UIControl {
-
-    struct Props: Equatable {
-
-    }
+final class KnowledgeCategoryTypeView: UIControl {
 
     // MARK: - Properties
 
@@ -51,6 +47,7 @@ final class KnowledgeCategoryView: UIControl {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, arrowImageView])
         stackView.spacing = 8
         stackView.alignment = .center
+        stackView.isUserInteractionEnabled = false
         addSubview(stackView, withEdgeInsets: UIEdgeInsets(top: 28, left: 24, bottom: 28, right: 24))
     }
 

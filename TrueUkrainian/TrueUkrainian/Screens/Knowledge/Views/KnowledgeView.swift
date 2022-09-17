@@ -16,9 +16,9 @@ final class KnowledgeView: UIView {
     // MARK: - Properties
 
     private let titleLabel = UILabel()
-    private let countryCategoryView = KnowledgeCategoryView()
-    private let historyCategoryView = KnowledgeCategoryView()
-    private let cultureCategoryView = KnowledgeCategoryView()
+    private let countryCategoryView = KnowledgeCategoryTypeView()
+    private let historyCategoryView = KnowledgeCategoryTypeView()
+    private let cultureCategoryView = KnowledgeCategoryTypeView()
     // callbacks
     var onTapCategory: (Category) -> Void = { _ in }
 
@@ -54,8 +54,11 @@ final class KnowledgeView: UIView {
 
     private func setupCategories() {
         countryCategoryView.configure(backgroundColor: .menuGreen, title: "Держава")
+        countryCategoryView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCategory(.country) }), for: .touchUpInside)
         historyCategoryView.configure(backgroundColor: .menuBlue, title: "Історія України")
+        historyCategoryView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCategory(.history) }), for: .touchUpInside)
         cultureCategoryView.configure(backgroundColor: .menuYellow, title: "Культура України")
+        cultureCategoryView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCategory(.culture) }), for: .touchUpInside)
     }
 
     private func setupStackView() {

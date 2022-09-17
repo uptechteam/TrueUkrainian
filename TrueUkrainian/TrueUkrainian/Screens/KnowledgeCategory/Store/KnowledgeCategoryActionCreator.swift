@@ -1,5 +1,5 @@
 //
-//  KnowledgeActionCreator.swift
+//  KnowledgeCategoryActionCreator.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-extension KnowledgeViewController {
+extension KnowledgeCategoryViewController {
 
     public final class ActionCreator {
 
@@ -19,7 +19,7 @@ extension KnowledgeViewController {
 
         // MARK: - Lifecycle
 
-        init(dependencies: Dependencies) {
+        public init(dependencies: Dependencies) {
             self.dependencies = dependencies
         }
     }

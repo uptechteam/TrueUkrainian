@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class KnowledgeCoordinator: Coordinating {
+final class KnowledgeCoordinator: NSObject, Coordinating {
 
     // MARK: - Properties
 
@@ -23,6 +23,7 @@ final class KnowledgeCoordinator: Coordinating {
     init(navigationController: UINavigationController) {
         self.childCoordinators = []
         self.navigationController = navigationController
+        super.init()
         setupUI()
     }
 
@@ -40,7 +41,7 @@ final class KnowledgeCoordinator: Coordinating {
         let tabBarItem = UITabBarItem(title: nil, image: .knowledgeDeselected, selectedImage: .knowledgeSelected)
         tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
         navigationController.tabBarItem = tabBarItem
-        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.delegate = self
     }
 
     // MARK: - Public methods
@@ -56,8 +57,28 @@ final class KnowledgeCoordinator: Coordinating {
     }
 }
 
-extension KnowledgeCoordinator: KnowledgeCoordinating {
+extension KnowledgeCoordinator: KnowledgeCategoryCoordinating {
 
 }
 
+extension KnowledgeCoordinator: KnowledgeCoordinating {
+    func showCategory(_ category: Category) {
+        let dependencies = KnowledgeCategoryViewController.Dependencies()
+        let viewController = KnowledgeCategoryViewController(
+            store: KnowledgeCategoryViewController.makeStore(dependencies: dependencies, category: category),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
 
+extension KnowledgeCoordinator: UINavigationControllerDelegate {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        navigationController.setNavigationBarHidden(viewController is KnowledgeViewController, animated: true)
+    }
+}
