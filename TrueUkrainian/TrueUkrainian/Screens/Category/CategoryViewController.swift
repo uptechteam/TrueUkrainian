@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  CategoryViewController.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -8,18 +8,18 @@
 import Combine
 import UIKit
 
-protocol HomeCoordinating: AnyObject {
-    func showCategory(_ category: Category)
+public protocol CategoryCoordinating: AnyObject {
+
 }
 
-final class HomeViewController: UIViewController {
+final class CategoryViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = HomeView()
-    private unowned let coordinator: HomeCoordinating
+    private let contentView = CategoryView()
+    private unowned let coordinator: CategoryCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: HomeCoordinating
+        coordinator: CategoryCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -56,36 +56,34 @@ final class HomeViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupUI() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            image: .back,
-            style: .plain,
-            target: nil,
-            action: nil
-        )
+        hidesBottomBarWhenPushed = true
+        navigationItem.title = "Назва"
     }
 
     private func setupBinding() {
-        contentView.onTapCountry = { [store] in
-            store.dispatch(action: .categoryTapped(.country))
-        }
-
-        contentView.onTapHistory = { [store] in
-            store.dispatch(action: .categoryTapped(.history))
-        }
-
-        contentView.onTapCulture = { [store] in
-            store.dispatch(action: .categoryTapped(.culture))
-        }
-
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map { state in
-                return HomeViewController.makeProps(from: state)
-            }
+            .map(CategoryViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
+            }
+            .store(in: &cancellables)
+
+        state
+            .first()
+            .sink { [unowned self] state in
+                switch state.category {
+                case .country:
+                    navigationItem.title = "Держава"
+
+                case .history:
+                    navigationItem.title = "Історія України"
+
+                case .culture:
+                    navigationItem.title = "Культура України"
+                }
             }
             .store(in: &cancellables)
         
@@ -97,8 +95,7 @@ final class HomeViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .showCategory(let category):
-            coordinator.showCategory(category)
+            
         }
     }
 }

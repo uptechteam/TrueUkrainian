@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeCoordinator: Coordinating {
+final class HomeCoordinator: NSObject, Coordinating {
 
     // MARK: - Properties
 
@@ -23,6 +23,7 @@ final class HomeCoordinator: Coordinating {
     init(navigationController: UINavigationController) {
         self.childCoordinators = []
         self.navigationController = navigationController
+        super.init()
         setupUI()
     }
 
@@ -33,11 +34,14 @@ final class HomeCoordinator: Coordinating {
     // MARK: - Set up
 
     private func setupUI() {
-        let tabBarItem = UITabBarItem(
-            title: nil, image: .homeDeselected, selectedImage: .homeSelected
-        )
+        navigationController.navigationBar.titleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 24, weight: .semibold),
+            .foregroundColor: UIColor.mainText
+        ]
+        let tabBarItem = UITabBarItem(title: nil, image: .homeDeselected, selectedImage: .homeSelected)
         tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
         navigationController.tabBarItem = tabBarItem
+        navigationController.delegate = self
     }
 
     // MARK: - Public methods
@@ -53,7 +57,28 @@ final class HomeCoordinator: Coordinating {
     }
 }
 
-extension HomeCoordinator: HomeCoordinating {
+extension HomeCoordinator: CategoryCoordinating {
 
 }
 
+extension HomeCoordinator: HomeCoordinating {
+    func showCategory(_ category: Category) {
+        let dependencies = CategoryViewController.Dependencies()
+        let viewController = CategoryViewController(
+            store: CategoryViewController.makeStore(dependencies: dependencies, category: category),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension HomeCoordinator: UINavigationControllerDelegate {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        navigationController.setNavigationBarHidden(viewController is HomeViewController, animated: true)
+    }
+}

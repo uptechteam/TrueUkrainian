@@ -56,17 +56,17 @@ final class TabBarCoordinator: Coordinating {
     // MARK: - Private methods
 
     private func makeKnowledgeCoordinator() {
-        let coordinator = KnowledgeCoordinator(navigationController: UINavigationController())
+        let coordinator = KnowledgeCoordinator(navigationController: BaseNavigationController())
         childCoordinators.append(coordinator)
     }
 
     private func makeHomeCoordinator() {
-        let coordinator = HomeCoordinator(navigationController: UINavigationController())
+        let coordinator = HomeCoordinator(navigationController: BaseNavigationController())
         childCoordinators.append(coordinator)
     }
 
     private func makeProfileCoordinator() {
-        let coordinator = ProfileCoordinator(navigationController: UINavigationController())
+        let coordinator = ProfileCoordinator(navigationController: BaseNavigationController())
         childCoordinators.append(coordinator)
     }
 }

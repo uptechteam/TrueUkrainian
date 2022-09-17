@@ -1,24 +1,25 @@
 //
-//  HomeStore.swift
+//  CategoryStore.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
 //
 
-extension HomeViewController {
+extension CategoryViewController {
 
     typealias Store = ReduxStore<State, Action>
 
-    public struct State: Equatable {
+    struct State: Equatable {
+        let category: Category
         var route: AnyIdentifiable<Route>?
     }
 
     enum Action {
-        case categoryTapped(Category)
+        case mock
     }
 
     enum Route {
-        case showCategory(Category)
+
     }
 
     struct Dependencies {
@@ -27,29 +28,30 @@ extension HomeViewController {
         }
     }
 
-    static func makeStore(dependencies: Dependencies) -> Store {
+    static func makeStore(dependencies: Dependencies, category: Category) -> Store {
         return Store(
-            initialState: makeInitialState(dependencies: dependencies),
+            initialState: makeInitialState(dependencies: dependencies, category: category),
             reducer: reduce,
             middlewares: []
         )
     }
 
-    private static func makeInitialState(dependencies: Dependencies) -> State {
+    private static func makeInitialState(dependencies: Dependencies, category: Category) -> State {
         return State(
+            category: category,
             route: nil
         )
     }
 }
 
-extension HomeViewController {
+extension CategoryViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        var newState = state
+        let newState = state
 
         switch action {
-        case .categoryTapped(let category):
-            newState.route = .init(value: .showCategory(category))
+        case .mock:
+            break
         }
 
         return newState

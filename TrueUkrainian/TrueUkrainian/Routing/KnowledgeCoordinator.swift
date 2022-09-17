@@ -33,9 +33,11 @@ final class KnowledgeCoordinator: Coordinating {
     // MARK: - Set up
 
     private func setupUI() {
-        let tabBarItem = UITabBarItem(
-            title: nil, image: .knowledgeDeselected, selectedImage: .knowledgeSelected
-        )
+        navigationController.navigationBar.titleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 24, weight: .semibold),
+            .foregroundColor: UIColor.mainText
+        ]
+        let tabBarItem = UITabBarItem(title: nil, image: .knowledgeDeselected, selectedImage: .knowledgeSelected)
         tabBarItem.imageInsets = UIEdgeInsets(top: 12, left: 0, bottom: -12, right: 0)
         navigationController.tabBarItem = tabBarItem
     }

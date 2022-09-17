@@ -1,5 +1,5 @@
 //
-//  HomeActionCreator.swift
+//  CategoryActionCreator.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-extension HomeViewController {
+extension CategoryViewController {
 
     final class ActionCreator {
 

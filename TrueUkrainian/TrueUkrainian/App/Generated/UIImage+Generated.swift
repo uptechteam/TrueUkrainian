@@ -9,6 +9,10 @@ import UIKit
 
 extension UIImage {
 
+  @nonobjc class var back: UIImage {
+    return UIImage(named: "back")!
+  }
+
   @nonobjc class var homeSelected: UIImage {
     return UIImage(named: "HomeSelected")!
   }
