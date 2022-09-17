@@ -1,0 +1,8 @@
+input_dir: TrueUkrainian/TrueUkrainian/App/
+output_dir: TrueUkrainian/TrueUkrainian/App/Generated/
+
+xcassets:
+  - inputs: Assets.xcassets
+    outputs:
+      - templatePath: swiftgen_images_template.stencil
+        output: UIImage+Generated.swift
