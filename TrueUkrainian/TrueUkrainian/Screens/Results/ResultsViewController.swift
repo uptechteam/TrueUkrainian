@@ -1,5 +1,5 @@
 //
-//  QuestionViewController.swift
+//  ResultsViewController.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 18.09.2022.
@@ -8,20 +8,18 @@
 import Combine
 import UIKit
 
-protocol QuestionCoordinating: AnyObject {
-    func didTapCloseQuiz()
-    func didFinishQuiz(activeQuiz: ActiveQuiz)
-    func didProceedNext(activeQuiz: ActiveQuiz)
+protocol ResultsCoordinating: AnyObject {
+
 }
 
-public final class QuestionViewController: UIViewController {
+public final class ResultsViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = QuestionView()
-    private unowned let coordinator: QuestionCoordinating
+    private let contentView = ResultsView()
+    private unowned let coordinator: ResultsCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -29,7 +27,7 @@ public final class QuestionViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: QuestionCoordinating
+        coordinator: ResultsCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -59,34 +57,22 @@ public final class QuestionViewController: UIViewController {
 
     private func setupUI() {
         hidesBottomBarWhenPushed = true
+        navigationItem.title = "Результати вікторини "
     }
 
     private func setupBinding() {
-        contentView.onTapAnswer = { [store] index in
-            store.dispatch(action: .answerTapped(index))
-        }
-
-        contentView.onTapAction = { [store] in
-            store.dispatch(action: .actionTapped)
-        }
-
-        contentView.onTapClose = { [store] in
-            store.dispatch(action: .closeTapped)
+        contentView.onTapItem = { [store] indexPath in
+            store.dispatch(action: .itemTapped(indexPath))
         }
 
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map(QuestionViewController.makeProps)
+            .map(ResultsViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
             }
-            .store(in: &cancellables)
-
-        state.compactMap(\.alert).removeDuplicates()
-            .map(\.value)
-            .sink { [unowned self] alert in show(alert: alert) }
             .store(in: &cancellables)
         
         state.compactMap(\.route).removeDuplicates()
@@ -94,28 +80,10 @@ public final class QuestionViewController: UIViewController {
             .sink { [unowned self] route in navigate(by: route) }
             .store(in: &cancellables)
     }
-
-    private func show(alert: Alert) {
-        switch alert {
-        case .details(let question):
-            let viewController = AlertViewController(question: question)
-            viewController.onDismiss = { [store] in
-                store.dispatch(action: .nextTapped)
-            }
-            present(viewController, animated: false)
-        }
-    }
     
     private func navigate(by route: Route) {
         switch route {
-        case .close:
-            coordinator.didTapCloseQuiz()
-
-        case .nextQuestion(let quiz):
-            coordinator.didProceedNext(activeQuiz: quiz)
-
-        case .finish(let quiz):
-            coordinator.didFinishQuiz(activeQuiz: quiz)
+            
         }
     }
 }

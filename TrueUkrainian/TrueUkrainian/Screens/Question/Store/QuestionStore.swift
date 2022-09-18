@@ -13,6 +13,7 @@ extension QuestionViewController {
         var activeQuiz: ActiveQuiz
         var answer: Int
         var isAnswered: Bool
+        var alert: AnyIdentifiable<Alert>?
         var route: AnyIdentifiable<Route>?
     }
 
@@ -20,6 +21,11 @@ extension QuestionViewController {
         case actionTapped
         case answerTapped(Int)
         case closeTapped
+        case nextTapped
+    }
+
+    enum Alert {
+        case details(Question)
     }
 
     enum Route {
@@ -47,6 +53,7 @@ extension QuestionViewController {
             activeQuiz: activeQuiz,
             answer: 0,
             isAnswered: false,
+            alert: nil,
             route: nil
         )
     }
@@ -59,6 +66,12 @@ extension QuestionViewController {
 
         switch action {
         case .actionTapped:
+            let question = newState.activeQuiz.quiz.questions[newState.activeQuiz.index]
+            guard newState.answer == question.correctAnswer else {
+                newState.alert = .init(value: .details(question))
+                break
+            }
+
             if newState.activeQuiz.index == newState.activeQuiz.quiz.questions.count - 1 {
                 newState.route = .init(value: .finish(newState.activeQuiz))
             } else {
@@ -73,11 +86,18 @@ extension QuestionViewController {
             newState.isAnswered = true
             newState.answer = index
             if newState.activeQuiz.quiz.questions[newState.activeQuiz.index].correctAnswer == index {
-                newState.activeQuiz.corectAnswers += 1
+                newState.activeQuiz.correctAnswersSet.insert(newState.activeQuiz.index)
             }
 
         case .closeTapped:
             newState.route = .init(value: .close)
+
+        case .nextTapped:
+            if newState.activeQuiz.index == newState.activeQuiz.quiz.questions.count - 1 {
+                newState.route = .init(value: .finish(newState.activeQuiz))
+            } else {
+                newState.route = .init(value: .nextQuestion(newState.activeQuiz))
+            }
         }
 
         return newState

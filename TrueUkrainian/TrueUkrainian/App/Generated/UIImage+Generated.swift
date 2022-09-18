@@ -13,6 +13,14 @@ extension UIImage {
     return UIImage(named: "rightArrow")!
   }
 
+  @nonobjc class var arrowDown: UIImage {
+    return UIImage(named: "arrowDown")!
+  }
+
+  @nonobjc class var arrowUp: UIImage {
+    return UIImage(named: "arrowUp")!
+  }
+
   @nonobjc class var back: UIImage {
     return UIImage(named: "back")!
   }

@@ -67,13 +67,30 @@ extension HomeCoordinator: CategoryCoordinating {
     func didTapStartQuiz(category: Category) {
         let dependencies = QuestionViewController.Dependencies()
         let quiz = QuizProvider().getQuiz(category: category)
-        let activeQuiz = ActiveQuiz(corectAnswers: 0, index: 0, quiz: quiz)
+        let activeQuiz = ActiveQuiz(index: 0, correctAnswersSet: Set(), quiz: quiz)
         let viewController = QuestionViewController(
             store: QuestionViewController.makeStore(dependencies: dependencies, activeQuiz: activeQuiz),
             actionCreator: .init(dependencies: dependencies),
             coordinator: self
         )
         navigationController.setViewControllers([viewController], animated: true)
+    }
+}
+
+extension HomeCoordinator: CongratsCoordinating {
+    func didFinishCongrats() {
+        let viewController = makeHomeViewController()
+        navigationController.setViewControllers([viewController], animated: false)
+    }
+
+    func didTapResults(activeQuiz: ActiveQuiz) {
+        let dependencies = ResultsViewController.Dependencies()
+        let viewController = ResultsViewController(
+            store: ResultsViewController.makeStore(dependencies: dependencies, activeQuiz: activeQuiz),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
@@ -91,7 +108,12 @@ extension HomeCoordinator: HomeCoordinating {
 
 extension HomeCoordinator: QuestionCoordinating {
     func didFinishQuiz(activeQuiz: ActiveQuiz) {
-        let viewController = makeHomeViewController()
+        let dependencies = CongratsViewController.Dependencies()
+        let viewController = CongratsViewController(
+            store: CongratsViewController.makeStore(dependencies: dependencies, activeQuiz: activeQuiz),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
         navigationController.setViewControllers([viewController], animated: true)
     }
 
@@ -113,6 +135,10 @@ extension HomeCoordinator: QuestionCoordinating {
     }
 }
 
+extension HomeCoordinator: ResultsCoordinating {
+    
+}
+
 extension HomeCoordinator: UINavigationControllerDelegate {
     public func navigationController(
         _ navigationController: UINavigationController,
@@ -120,7 +146,7 @@ extension HomeCoordinator: UINavigationControllerDelegate {
         animated: Bool
     ) {
         navigationController.setNavigationBarHidden(
-            viewController is HomeViewController || viewController is QuestionViewController,
+            viewController is HomeViewController || viewController is QuestionViewController || viewController is CongratsViewController,
             animated: true
         )
     }

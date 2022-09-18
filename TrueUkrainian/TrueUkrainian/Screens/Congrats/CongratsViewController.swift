@@ -1,5 +1,5 @@
 //
-//  QuestionViewController.swift
+//  CongratsViewController.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 18.09.2022.
@@ -8,20 +8,19 @@
 import Combine
 import UIKit
 
-protocol QuestionCoordinating: AnyObject {
-    func didTapCloseQuiz()
-    func didFinishQuiz(activeQuiz: ActiveQuiz)
-    func didProceedNext(activeQuiz: ActiveQuiz)
+protocol CongratsCoordinating: AnyObject {
+    func didFinishCongrats()
+    func didTapResults(activeQuiz: ActiveQuiz)
 }
 
-public final class QuestionViewController: UIViewController {
+public final class CongratsViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = QuestionView()
-    private unowned let coordinator: QuestionCoordinating
+    private let contentView = CongratsView()
+    private unowned let coordinator: CongratsCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -29,7 +28,7 @@ public final class QuestionViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: QuestionCoordinating
+        coordinator: CongratsCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -59,26 +58,32 @@ public final class QuestionViewController: UIViewController {
 
     private func setupUI() {
         hidesBottomBarWhenPushed = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            image: .back,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
 
     private func setupBinding() {
-        contentView.onTapAnswer = { [store] index in
-            store.dispatch(action: .answerTapped(index))
+        contentView.onTapResults = { [store] in
+            store.dispatch(action: .resultsTapped)
         }
 
-        contentView.onTapAction = { [store] in
-            store.dispatch(action: .actionTapped)
+        contentView.onTapShare = { [store] in
+            store.dispatch(action: .shareTapped)
         }
 
-        contentView.onTapClose = { [store] in
-            store.dispatch(action: .closeTapped)
+        contentView.onTapHome = { [store] in
+            store.dispatch(action: .homeTapped)
         }
 
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map(QuestionViewController.makeProps)
+            .map(CongratsViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
             }
@@ -97,25 +102,24 @@ public final class QuestionViewController: UIViewController {
 
     private func show(alert: Alert) {
         switch alert {
-        case .details(let question):
-            let viewController = AlertViewController(question: question)
-            viewController.onDismiss = { [store] in
-                store.dispatch(action: .nextTapped)
-            }
-            present(viewController, animated: false)
+        case .share:
+            let alertViewController = UIAlertController(
+                title: "Як поділитися",
+                message: "1. Зроби скріншот свого результату.\n2. Поділись зі своїми друзями",
+                preferredStyle: .alert
+            )
+            alertViewController.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(alertViewController, animated: true)
         }
     }
     
     private func navigate(by route: Route) {
         switch route {
-        case .close:
-            coordinator.didTapCloseQuiz()
+        case .finish:
+            coordinator.didFinishCongrats()
 
-        case .nextQuestion(let quiz):
-            coordinator.didProceedNext(activeQuiz: quiz)
-
-        case .finish(let quiz):
-            coordinator.didFinishQuiz(activeQuiz: quiz)
+        case .results(let quiz):
+            coordinator.didTapResults(activeQuiz: quiz)
         }
     }
 }
