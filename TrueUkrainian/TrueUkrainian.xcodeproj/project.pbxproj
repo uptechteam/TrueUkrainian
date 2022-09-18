@@ -59,6 +59,8 @@
 		86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CE28D6D054002C85CA /* QuestionProps.swift */; };
 		86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CF28D6D054002C85CA /* QuestionStore.swift */; };
 		86F636D728D6D314002C85CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636D628D6D314002C85CA /* ProgressView.swift */; };
+		86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636D828D6D62F002C85CA /* QuestionInfoView.swift */; };
+		86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		86F636CE28D6D054002C85CA /* QuestionProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProps.swift; sourceTree = "<group>"; };
 		86F636CF28D6D054002C85CA /* QuestionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionStore.swift; sourceTree = "<group>"; };
 		86F636D628D6D314002C85CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		86F636D828D6D62F002C85CA /* QuestionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionInfoView.swift; sourceTree = "<group>"; };
+		86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				86F636CA28D6D054002C85CA /* QuestionView.swift */,
+				86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */,
+				86F636D828D6D62F002C85CA /* QuestionInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				86DF330228D63F1900F30F3A /* KnowledgeViewController.swift in Sources */,
 				86DF32FC28D63F1900F30F3A /* ProfileActionCreator.swift in Sources */,
 				86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */,
+				86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */,
 				86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */,
 				86DF330028D63F1900F30F3A /* HomeProps.swift in Sources */,
 				86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */,
@@ -520,6 +527,7 @@
 				86DF32D528D63DE300F30F3A /* KnowledgeCoordinator.swift in Sources */,
 				86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */,
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
+				86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */,
 				86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */,
 				86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */,
 				86DF32FD28D63F1900F30F3A /* HomeViewController.swift in Sources */,
