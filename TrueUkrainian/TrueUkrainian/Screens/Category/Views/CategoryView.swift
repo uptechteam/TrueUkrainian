@@ -20,6 +20,8 @@ final class CategoryView: UIView {
     private let levelView = CategorySettingsView()
     private let questionCountView = CategorySettingsView()
     private let startButton = Button()
+    // callbacks
+    var onTapStart: () -> Void = { }
 
     // MARK: - Lifecycle
 
@@ -59,6 +61,7 @@ final class CategoryView: UIView {
 
     private func setupStartButton() {
         startButton.setTitle("Розпочати!")
+        startButton.addAction(UIAction(handler: { [weak self] _ in self?.onTapStart() }), for: .touchUpInside)
     }
 
     private func setupStackView() {

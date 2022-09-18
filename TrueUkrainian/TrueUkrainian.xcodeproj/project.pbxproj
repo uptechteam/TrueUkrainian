@@ -53,6 +53,11 @@
 		86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */; };
 		86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */; };
 		86F636C428D6CDD4002C85CA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C328D6CDD4002C85CA /* Button.swift */; };
+		86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C828D6D054002C85CA /* QuestionViewController.swift */; };
+		86F636D128D6D054002C85CA /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CA28D6D054002C85CA /* QuestionView.swift */; };
+		86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */; };
+		86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CE28D6D054002C85CA /* QuestionProps.swift */; };
+		86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CF28D6D054002C85CA /* QuestionStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +109,11 @@
 		86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryProps.swift; sourceTree = "<group>"; };
 		86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingsView.swift; sourceTree = "<group>"; };
 		86F636C328D6CDD4002C85CA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		86F636C828D6D054002C85CA /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		86F636CA28D6D054002C85CA /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionActionCreator.swift; sourceTree = "<group>"; };
+		86F636CE28D6D054002C85CA /* QuestionProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProps.swift; sourceTree = "<group>"; };
+		86F636CF28D6D054002C85CA /* QuestionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86F636C728D6D054002C85CA /* Question */,
 				86DF333228D66AEF00F30F3A /* KnowledgeCategory */,
 				86DF331B28D64F1200F30F3A /* Category */,
 				86DF32E828D63F1900F30F3A /* Home */,
@@ -363,6 +374,34 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		86F636C728D6D054002C85CA /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				86F636C828D6D054002C85CA /* QuestionViewController.swift */,
+				86F636C928D6D054002C85CA /* Views */,
+				86F636CC28D6D054002C85CA /* Store */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		86F636C928D6D054002C85CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86F636CA28D6D054002C85CA /* QuestionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86F636CC28D6D054002C85CA /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */,
+				86F636CE28D6D054002C85CA /* QuestionProps.swift */,
+				86F636CF28D6D054002C85CA /* QuestionStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,10 +494,13 @@
 				86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */,
 				86DF32D928D63DEE00F30F3A /* ProfileCoordinator.swift in Sources */,
 				86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */,
+				86F636D128D6D054002C85CA /* QuestionView.swift in Sources */,
 				86DF332F28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift in Sources */,
 				86DF330128D63F1900F30F3A /* HomeActionCreator.swift in Sources */,
 				86DF330228D63F1900F30F3A /* KnowledgeViewController.swift in Sources */,
 				86DF32FC28D63F1900F30F3A /* ProfileActionCreator.swift in Sources */,
+				86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */,
+				86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */,
 				86DF330028D63F1900F30F3A /* HomeProps.swift in Sources */,
 				86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */,
 				86DF330C28D6412B00F30F3A /* CALayer+TU.swift in Sources */,
@@ -474,6 +516,8 @@
 				86DF32D528D63DE300F30F3A /* KnowledgeCoordinator.swift in Sources */,
 				86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */,
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
+				86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */,
+				86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */,
 				86DF32FD28D63F1900F30F3A /* HomeViewController.swift in Sources */,
 				86DF32D728D63DE800F30F3A /* HomeCoordinator.swift in Sources */,
 				86F636C428D6CDD4002C85CA /* Button.swift in Sources */,

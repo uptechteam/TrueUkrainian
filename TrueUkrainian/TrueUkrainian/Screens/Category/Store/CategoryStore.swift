@@ -15,11 +15,11 @@ extension CategoryViewController {
     }
 
     enum Action {
-        case mock
+        case startTapped
     }
 
     enum Route {
-
+        case startQuiz(Category)
     }
 
     struct Dependencies {
@@ -47,11 +47,11 @@ extension CategoryViewController {
 extension CategoryViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        let newState = state
+        var newState = state
 
         switch action {
-        case .mock:
-            break
+        case .startTapped:
+            newState.route = .init(value: .startQuiz(newState.category))
         }
 
         return newState

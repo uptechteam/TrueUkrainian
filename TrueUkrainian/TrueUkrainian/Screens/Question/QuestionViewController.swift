@@ -1,25 +1,25 @@
 //
-//  CategoryViewController.swift
+//  QuestionViewController.swift
 //  TrueUkrainian
 //
-//  Created by Oleksii Andriushchenko on 17.09.2022.
+//  Created by Oleksii Andriushchenko on 18.09.2022.
 //
 
 import Combine
 import UIKit
 
-protocol CategoryCoordinating: AnyObject {
-    func didTapStartQuiz(category: Category)
+public protocol QuestionCoordinating: AnyObject {
+    func didTapCloseQuiz()
 }
 
-final class CategoryViewController: UIViewController {
+public final class QuestionViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = CategoryView()
-    private unowned let coordinator: CategoryCoordinating
+    private let contentView = QuestionView()
+    private unowned let coordinator: QuestionCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -27,7 +27,7 @@ final class CategoryViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: CategoryCoordinating
+        coordinator: QuestionCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -57,37 +57,20 @@ final class CategoryViewController: UIViewController {
 
     private func setupUI() {
         hidesBottomBarWhenPushed = true
-        navigationItem.title = "Назва"
     }
 
     private func setupBinding() {
-        contentView.onTapStart = { [store] in
-            store.dispatch(action: .startTapped)
+        contentView.onTapClose = { [store] in
+            store.dispatch(action: .closeTapped)
         }
 
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map(CategoryViewController.makeProps)
+            .map(QuestionViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
-            }
-            .store(in: &cancellables)
-
-        state
-            .first()
-            .sink { [unowned self] state in
-                switch state.category {
-                case .country:
-                    navigationItem.title = "Держава"
-
-                case .history:
-                    navigationItem.title = "Історія України"
-
-                case .culture:
-                    navigationItem.title = "Культура України"
-                }
             }
             .store(in: &cancellables)
         
@@ -99,8 +82,8 @@ final class CategoryViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .startQuiz(let category):
-            coordinator.didTapStartQuiz(category: category)
+        case .finish:
+            coordinator.didTapCloseQuiz()
         }
     }
 }

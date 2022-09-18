@@ -47,18 +47,32 @@ final class HomeCoordinator: NSObject, Coordinating {
     // MARK: - Public methods
 
     func start() {
+        let viewController = makeHomeViewController()
+        navigationController.pushViewController(viewController, animated: false)
+    }
+
+    // MARK: - Private methods
+
+    private func makeHomeViewController() -> HomeViewController {
         let dependencies = HomeViewController.Dependencies()
-        let viewController = HomeViewController(
+        return HomeViewController(
             store: HomeViewController.makeStore(dependencies: dependencies),
             actionCreator: .init(dependencies: dependencies),
             coordinator: self
         )
-        navigationController.pushViewController(viewController, animated: false)
     }
 }
 
 extension HomeCoordinator: CategoryCoordinating {
-
+    func didTapStartQuiz(category: Category) {
+        let dependencies = QuestionViewController.Dependencies()
+        let viewController = QuestionViewController(
+            store: QuestionViewController.makeStore(dependencies: dependencies),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.setViewControllers([viewController], animated: true)
+    }
 }
 
 extension HomeCoordinator: HomeCoordinating {
@@ -73,12 +87,22 @@ extension HomeCoordinator: HomeCoordinating {
     }
 }
 
+extension HomeCoordinator: QuestionCoordinating {
+    func didTapCloseQuiz() {
+        let viewController = makeHomeViewController()
+        navigationController.setViewControllers([viewController], animated: true)
+    }
+}
+
 extension HomeCoordinator: UINavigationControllerDelegate {
     public func navigationController(
         _ navigationController: UINavigationController,
         willShow viewController: UIViewController,
         animated: Bool
     ) {
-        navigationController.setNavigationBarHidden(viewController is HomeViewController, animated: true)
+        navigationController.setNavigationBarHidden(
+            viewController is HomeViewController || viewController is QuestionViewController,
+            animated: true
+        )
     }
 }

@@ -17,6 +17,10 @@ extension UIImage {
     return UIImage(named: "back")!
   }
 
+  @nonobjc class var close: UIImage {
+    return UIImage(named: "close")!
+  }
+
   @nonobjc class var homeSelected: UIImage {
     return UIImage(named: "HomeSelected")!
   }
