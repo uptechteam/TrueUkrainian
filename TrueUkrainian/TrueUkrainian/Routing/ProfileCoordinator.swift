@@ -56,5 +56,15 @@ final class ProfileCoordinator: Coordinating {
 }
 
 extension ProfileCoordinator: ProfileCoordinating {
+    func didTapRating() {
 
+    }
+
+    func didTapDictionary() {
+
+    }
+
+    func didTapInfo() {
+        
+    }
 }

@@ -9,7 +9,9 @@ import Combine
 import UIKit
 
 protocol ProfileCoordinating: AnyObject {
-
+    func didTapRating()
+    func didTapDictionary()
+    func didTapInfo()
 }
 
 public final class ProfileViewController: UIViewController {
@@ -55,6 +57,18 @@ public final class ProfileViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupBinding() {
+        contentView.onDidTabRatingButton = { [store] in
+            store.dispatch(action: .ratingButtonTapped)
+        }
+
+        contentView.onDidTapDictionaryButton = { [store] in
+            store.dispatch(action: .dictionaryButtonTapped)
+        }
+
+        contentView.ondidTapInfoButton = { [store] in
+            store.dispatch(action: .infoButtonTapped)
+        }
+
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
@@ -75,7 +89,14 @@ public final class ProfileViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-            
+        case .rating:
+            coordinator.didTapRating()
+
+        case .dictionary:
+            coordinator.didTapDictionary()
+
+        case .info:
+            coordinator.didTapInfo()
         }
     }
 }

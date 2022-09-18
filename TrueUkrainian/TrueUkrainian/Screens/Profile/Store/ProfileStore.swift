@@ -14,11 +14,15 @@ extension ProfileViewController {
     }
 
     public enum Action {
-        case mock
+        case ratingButtonTapped
+        case dictionaryButtonTapped
+        case infoButtonTapped
     }
 
     enum Route {
-
+        case rating
+        case dictionary
+        case info
     }
 
     public struct Dependencies {
@@ -45,11 +49,17 @@ extension ProfileViewController {
 extension ProfileViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        let newState = state
+        var newState = state
 
         switch action {
-        case .mock:
-            break
+        case .ratingButtonTapped:
+            newState.route = .init(value: .rating)
+
+        case .dictionaryButtonTapped:
+            newState.route = .init(value: .dictionary)
+
+        case.infoButtonTapped:
+            newState.route = .init(value: .info)
         }
 
         return newState

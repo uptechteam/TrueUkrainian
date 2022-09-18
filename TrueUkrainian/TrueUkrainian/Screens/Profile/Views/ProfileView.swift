@@ -25,6 +25,10 @@ final class ProfileView: UIView {
     private let infoButton = ProfileButton()
     private let buttonsStackView = UIStackView()
     private let stackView = UIStackView()
+    // callbacks
+    var onDidTabRatingButton: () -> Void = { }
+    var onDidTapDictionaryButton: () -> Void = { }
+    var ondidTapInfoButton: () -> Void = { }
 
 
     // MARK: - Lifecycle
@@ -61,15 +65,33 @@ final class ProfileView: UIView {
     }
 
     private func setupRatingButton() {
-//        ratingButton.setCustomTitle("Рейтинг друзів")
+        ratingButton.setCustomTitle("Рейтинг друзів")
+        ratingButton.addAction(
+            UIAction(handler: { [weak self] action in
+                self?.onDidTabRatingButton()
+            }),
+            for: .touchUpInside
+        )
     }
 
     private func setupDictionaryButton() {
-//        dictionaryButton.setCustomTitle("Словник")
+        dictionaryButton.setCustomTitle("Словник")
+        dictionaryButton.addAction(
+            UIAction(handler: { [weak self] action in
+                self?.onDidTapDictionaryButton()
+            }),
+            for: .touchUpInside
+        )
     }
 
     private func setupInfoButton() {
-//        infoButton.setCustomTitle("Що по русні?")
+        infoButton.setCustomTitle("Що по русні?")
+        infoButton.addAction(
+            UIAction(handler: { [weak self] action in
+                self?.ondidTapInfoButton()
+            }),
+            for: .touchUpInside
+        )
     }
 
     private func setupButtonsStackView() {
@@ -139,12 +161,14 @@ final class ProfileButton: UIButton {
     }
 
     private func setupContentView() {
+        layer.roundCornersContinuosly(radius: 8, corners: .all)
         layer.addBorder(color: .borderColor, width: 1)
+        backgroundColor = .white
     }
 
     private func setupCustomTitleLabel() {
         customTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        customTitleLabel.font = .systemFont(ofSize: 20)
+        customTitleLabel.font = .systemFont(ofSize: 20, weight: .light)
     }
 
     private func setupArrowsImageView() {

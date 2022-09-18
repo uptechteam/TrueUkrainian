@@ -45,7 +45,7 @@ final class ProfileAvatarView: UIView {
     private func setupNameLabel() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = "Leila"
-        nameLabel.font = .systemFont(ofSize: 24)
+        nameLabel.font = .systemFont(ofSize: 24, weight: .light)
     }
 
     private func setupAgeLabel() {
