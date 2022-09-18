@@ -55,6 +55,7 @@ final class ResultsitemCell: UICollectionViewCell, ReusableCell {
         descriptionLabel.numberOfLines = 0
 
         arrowImageView.setContentHuggingPriority(.required, for: .horizontal)
+        arrowImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 
     private func setupStackView() {

@@ -92,7 +92,7 @@ final class DeadRussionView: UIView {
     }
 
     private func setupShareButton() {
-        shareButton.setTitle("Куда донатить?")
+        shareButton.setTitle("Поділитися")
         shareButton.addAction(
             UIAction(handler: { [weak self] _ in
                 self?.onDidTabShareButton()
