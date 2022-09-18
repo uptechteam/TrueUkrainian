@@ -10,14 +10,19 @@ import UIKit
 final class QuestionView: UIView {
 
     struct Props: Equatable {
-
+        let progress: Double
+        let buttonTitle: String
     }
 
     // MARK: - Properties
 
+    private let topStackView = UIStackView()
+    private let progressView = ProgressView()
     private let closeButton = UIButton()
+    private let actionButton = Button()
     // callbacks
     var onTapClose: () -> Void = { }
+    var onTapAction: () -> Void = { }
 
     // MARK: - Lifecycle
 
@@ -34,25 +39,45 @@ final class QuestionView: UIView {
 
     private func setup() {
         setupContentView()
-        setupCloseButton()
+        setupTopStackView()
+        setupActionButton()
+        setupStackView()
     }
 
     private func setupContentView() {
         backgroundColor = .bg
     }
 
-    private func setupCloseButton() {
+    private func setupTopStackView() {
+        [progressView, closeButton].forEach(topStackView.addArrangedSubview)
+        topStackView.spacing = 36
+        topStackView.alignment = .center
         closeButton.setImage(.close, for: .normal)
         closeButton.addAction(UIAction(handler: { [weak self] _ in self?.onTapClose() }), for: .touchUpInside)
-        addSubview(closeButton, constraints: [
-            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 32),
-            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
-        ])
+        progressView.configure(
+            backColor: UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1),
+            fillColor: .darkPurple
+        )
+    }
+
+    private func setupActionButton() {
+        actionButton.addAction(UIAction(handler: { [weak self] _ in self?.onTapAction() }), for: .touchUpInside)
+    }
+
+    private func setupStackView() {
+        let stackView = UIStackView(arrangedSubviews: [topStackView, UIView(), actionButton])
+        stackView.axis = .vertical
+        addSubview(
+            stackView,
+            withEdgeInsets: UIEdgeInsets(top: 32, left: 24, bottom: 60, right: 24),
+            isSafeAreaRequired: true
+        )
     }
 
     // MARK: - Public methods
 
     func render(props: Props) {
-
+        progressView.set(progress: props.progress)
+        actionButton.setTitle(props.buttonTitle)
     }
 }

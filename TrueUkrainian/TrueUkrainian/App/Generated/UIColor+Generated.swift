@@ -20,6 +20,18 @@ extension UIColor {
       return UIColor(red: 0.208, green: 0.333, blue: 0.714, alpha: 1)
     }
 
+    @nonobjc class var darkGreen: UIColor {
+      return UIColor(red: 0.424, green: 0.471, blue: 0.42, alpha: 1)
+    }
+
+    @nonobjc class var darkPurple: UIColor {
+      return UIColor(red: 0.349, green: 0.341, blue: 0.396, alpha: 1)
+    }
+
+    @nonobjc class var darkYellow: UIColor {
+      return UIColor(red: 0.463, green: 0.437, blue: 0.407, alpha: 1)
+    }
+
     @nonobjc class var mainText: UIColor {
       return UIColor(red: 0.125, green: 0.124, blue: 0.124, alpha: 1)
     }

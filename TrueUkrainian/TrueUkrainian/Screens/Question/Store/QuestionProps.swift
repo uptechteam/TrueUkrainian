@@ -7,6 +7,9 @@
 
 extension QuestionViewController {
     static func makeProps(from state: State) -> QuestionView.Props {
-        .init()
+        return .init(
+            progress: 0.5,
+            buttonTitle: "Обери відповідь"
+        )
     }
 }
