@@ -77,6 +77,13 @@ extension HomeCoordinator: CategoryCoordinating {
     }
 }
 
+extension HomeCoordinator: CongratsCoordinating {
+    func didFinishCongrats() {
+        let viewController = makeHomeViewController()
+        navigationController.setViewControllers([viewController], animated: false)
+    }
+}
+
 extension HomeCoordinator: HomeCoordinating {
     func showCategory(_ category: Category) {
         let dependencies = CategoryViewController.Dependencies()
@@ -91,7 +98,12 @@ extension HomeCoordinator: HomeCoordinating {
 
 extension HomeCoordinator: QuestionCoordinating {
     func didFinishQuiz(activeQuiz: ActiveQuiz) {
-        let viewController = makeHomeViewController()
+        let dependencies = CongratsViewController.Dependencies()
+        let viewController = CongratsViewController(
+            store: CongratsViewController.makeStore(dependencies: dependencies, activeQuiz: activeQuiz),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
         navigationController.setViewControllers([viewController], animated: true)
     }
 
@@ -120,7 +132,7 @@ extension HomeCoordinator: UINavigationControllerDelegate {
         animated: Bool
     ) {
         navigationController.setNavigationBarHidden(
-            viewController is HomeViewController || viewController is QuestionViewController,
+            viewController is HomeViewController || viewController is QuestionViewController || viewController is CongratsViewController,
             animated: true
         )
     }

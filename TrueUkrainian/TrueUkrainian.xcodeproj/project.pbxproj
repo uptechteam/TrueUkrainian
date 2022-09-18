@@ -67,6 +67,11 @@
 		86F636E428D6E7EC002C85CA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E328D6E7EC002C85CA /* AlertViewController.swift */; };
 		86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E528D6E7F7002C85CA /* AlertView.swift */; };
 		86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E728D6E809002C85CA /* AlertContentView.swift */; };
+		86F636F628D6EBF8002C85CA /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636EE28D6EBF8002C85CA /* CongratsViewController.swift */; };
+		86F636F728D6EBF8002C85CA /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636F028D6EBF8002C85CA /* CongratsView.swift */; };
+		86F636F828D6EBF8002C85CA /* CongratsActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636F228D6EBF8002C85CA /* CongratsActionCreator.swift */; };
+		86F636F928D6EBF8002C85CA /* CongratsProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636F328D6EBF8002C85CA /* CongratsProps.swift */; };
+		86F636FA28D6EBF8002C85CA /* CongratsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636F428D6EBF8002C85CA /* CongratsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +137,11 @@
 		86F636E328D6E7EC002C85CA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		86F636E528D6E7F7002C85CA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		86F636E728D6E809002C85CA /* AlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentView.swift; sourceTree = "<group>"; };
+		86F636EE28D6EBF8002C85CA /* CongratsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
+		86F636F028D6EBF8002C85CA /* CongratsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		86F636F228D6EBF8002C85CA /* CongratsActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsActionCreator.swift; sourceTree = "<group>"; };
+		86F636F328D6EBF8002C85CA /* CongratsProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsProps.swift; sourceTree = "<group>"; };
+		86F636F428D6EBF8002C85CA /* CongratsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +209,7 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86F636EC28D6EBF8002C85CA /* Congrats */,
 				86F636E228D6E7E0002C85CA /* Alert */,
 				86F636C728D6D054002C85CA /* Question */,
 				86DF333228D66AEF00F30F3A /* KnowledgeCategory */,
@@ -437,6 +448,34 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		86F636EC28D6EBF8002C85CA /* Congrats */ = {
+			isa = PBXGroup;
+			children = (
+				86F636EE28D6EBF8002C85CA /* CongratsViewController.swift */,
+				86F636EF28D6EBF8002C85CA /* Views */,
+				86F636F128D6EBF8002C85CA /* Store */,
+			);
+			path = Congrats;
+			sourceTree = "<group>";
+		};
+		86F636EF28D6EBF8002C85CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86F636F028D6EBF8002C85CA /* CongratsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86F636F128D6EBF8002C85CA /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86F636F228D6EBF8002C85CA /* CongratsActionCreator.swift */,
+				86F636F328D6EBF8002C85CA /* CongratsProps.swift */,
+				86F636F428D6EBF8002C85CA /* CongratsStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -508,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DF330A28D63FA600F30F3A /* AnyIdentifiable.swift in Sources */,
+				86F636F728D6EBF8002C85CA /* CongratsView.swift in Sources */,
 				86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */,
 				86DF32CF28D63C3C00F30F3A /* AppCoordinator.swift in Sources */,
 				86DF32FF28D63F1900F30F3A /* HomeStore.swift in Sources */,
@@ -521,7 +561,10 @@
 				86DF333C28D66AEF00F30F3A /* KnowledgeCategoryViewController.swift in Sources */,
 				86DF330828D63F4800F30F3A /* Redux.swift in Sources */,
 				86DF32F928D63F1900F30F3A /* ProfileView.swift in Sources */,
+				86F636F828D6EBF8002C85CA /* CongratsActionCreator.swift in Sources */,
+				86F636F928D6EBF8002C85CA /* CongratsProps.swift in Sources */,
 				86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */,
+				86F636F628D6EBF8002C85CA /* CongratsViewController.swift in Sources */,
 				86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */,
 				86DF333D28D66AEF00F30F3A /* KnowledgeCategoryView.swift in Sources */,
 				86DF330428D63F1900F30F3A /* KnowledgeActionCreator.swift in Sources */,
@@ -562,6 +605,7 @@
 				86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */,
 				86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */,
 				86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */,
+				86F636FA28D6EBF8002C85CA /* CongratsStore.swift in Sources */,
 				86DF32FD28D63F1900F30F3A /* HomeViewController.swift in Sources */,
 				86DF32D728D63DE800F30F3A /* HomeCoordinator.swift in Sources */,
 				86F636C428D6CDD4002C85CA /* Button.swift in Sources */,
