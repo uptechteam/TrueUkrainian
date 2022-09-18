@@ -35,6 +35,7 @@ public final class ProfileViewController: UIViewController {
         self.actionCreator = actionCreator
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
+        setupUI()
     }
 
     required init?(coder: NSCoder) {
@@ -55,6 +56,15 @@ public final class ProfileViewController: UIViewController {
     }
 
     // MARK: - Private methods
+
+    private func setupUI() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            image: .back,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+    }
 
     private func setupBinding() {
         contentView.onDidTabRatingButton = { [store] in

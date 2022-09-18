@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileCoordinator: Coordinating {
+final class ProfileCoordinator: NSObject, Coordinating {
 
     // MARK: - Properties
 
@@ -23,6 +23,7 @@ final class ProfileCoordinator: Coordinating {
     init(navigationController: UINavigationController) {
         self.childCoordinators = []
         self.navigationController = navigationController
+        super.init()
         setupUI()
     }
 
@@ -65,6 +66,29 @@ extension ProfileCoordinator: ProfileCoordinating {
     }
 
     func didTapInfo() {
-        
+        let viewController = DeadRussionViewController(
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension ProfileCoordinator: DeadRussionCoordinating {
+    func didTapWhereDotate() {
+
+    }
+
+    func didTapShare() {
+
+    }
+}
+
+extension ProfileCoordinator: UINavigationControllerDelegate {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        willShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        navigationController.setNavigationBarHidden(viewController is KnowledgeViewController, animated: true)
     }
 }

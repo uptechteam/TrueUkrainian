@@ -66,32 +66,23 @@ final class ProfileView: UIView {
 
     private func setupRatingButton() {
         ratingButton.setCustomTitle("Рейтинг друзів")
-        ratingButton.addAction(
-            UIAction(handler: { [weak self] action in
-                self?.onDidTabRatingButton()
-            }),
-            for: .touchUpInside
-        )
+        ratingButton.onDidTap = { [weak self] in
+            self?.onDidTabRatingButton()
+        }
     }
 
     private func setupDictionaryButton() {
         dictionaryButton.setCustomTitle("Словник")
-        dictionaryButton.addAction(
-            UIAction(handler: { [weak self] action in
-                self?.onDidTapDictionaryButton()
-            }),
-            for: .touchUpInside
-        )
+        dictionaryButton.onDidTap = { [weak self] in
+            self?.onDidTapDictionaryButton()
+        }
     }
 
     private func setupInfoButton() {
         infoButton.setCustomTitle("Що по русні?")
-        infoButton.addAction(
-            UIAction(handler: { [weak self] action in
-                self?.ondidTapInfoButton()
-            }),
-            for: .touchUpInside
-        )
+        infoButton.onDidTap = { [weak self] in
+            self?.ondidTapInfoButton()
+        }
     }
 
     private func setupButtonsStackView() {
@@ -132,13 +123,15 @@ final class ProfileView: UIView {
 
 import UIKit
 
-final class ProfileButton: UIButton {
+final class ProfileButton: UIView {
 
     // MARK: - Properties
 
     private let customTitleLabel = UILabel()
     private let arrowImageView = UIImageView()
     private let stackView = UIStackView()
+    // callbacks
+    var onDidTap: () -> Void = { }
 
     // MARK: - Lifecycle
 
@@ -164,6 +157,9 @@ final class ProfileButton: UIButton {
         layer.roundCornersContinuosly(radius: 8, corners: .all)
         layer.addBorder(color: .borderColor, width: 1)
         backgroundColor = .white
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        addGestureRecognizer(tap)
+        isUserInteractionEnabled = true
     }
 
     private func setupCustomTitleLabel() {
@@ -195,5 +191,9 @@ final class ProfileButton: UIButton {
     func setCustomTitle(_ text: String) {
         self.customTitleLabel.text = text
     }
-}
 
+    @objc
+    private func handleTap(_ sender: UITapGestureRecognizer) {
+        onDidTap()
+    }
+}

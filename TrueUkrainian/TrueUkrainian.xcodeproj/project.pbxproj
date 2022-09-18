@@ -64,9 +64,6 @@
 		86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DC28D6DC70002C85CA /* Quiz.swift */; };
 		86F636DF28D6DD18002C85CA /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DE28D6DD18002C85CA /* QuizProvider.swift */; };
 		86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */; };
-		A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */; };
-		A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185428D6EEF1001C4137 /* ProfileRatingView.swift */; };
-		A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185628D6EF4A001C4137 /* ProfileResultView.swift */; };
 		86F636E428D6E7EC002C85CA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E328D6E7EC002C85CA /* AlertViewController.swift */; };
 		86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E528D6E7F7002C85CA /* AlertView.swift */; };
 		86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E728D6E809002C85CA /* AlertContentView.swift */; };
@@ -86,6 +83,11 @@
 		86F6371728D6F8D9002C85CA /* UICollectionView+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */; };
 		86F6371928D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */; };
 		86F6371B28D6FF5F002C85CA /* String+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371A28D6FF5F002C85CA /* String+TU.swift */; };
+		A12FBEE828D706FE008D62CB /* DeadRussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FBEE728D706FE008D62CB /* DeadRussionViewController.swift */; };
+		A12FBEEA28D7070A008D62CB /* DeadRussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FBEE928D7070A008D62CB /* DeadRussionView.swift */; };
+		A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */; };
+		A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185428D6EEF1001C4137 /* ProfileRatingView.swift */; };
+		A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185628D6EF4A001C4137 /* ProfileResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,9 +150,6 @@
 		86F636DC28D6DC70002C85CA /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		86F636DE28D6DD18002C85CA /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
 		86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuiz.swift; sourceTree = "<group>"; };
-		A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
-		A154185428D6EEF1001C4137 /* ProfileRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingView.swift; sourceTree = "<group>"; };
-		A154185628D6EF4A001C4137 /* ProfileResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResultView.swift; sourceTree = "<group>"; };
 		86F636E328D6E7EC002C85CA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		86F636E528D6E7F7002C85CA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		86F636E728D6E809002C85CA /* AlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +169,11 @@
 		86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+TU.swift"; sourceTree = "<group>"; };
 		86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+TU.swift"; sourceTree = "<group>"; };
 		86F6371A28D6FF5F002C85CA /* String+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TU.swift"; sourceTree = "<group>"; };
+		A12FBEE728D706FE008D62CB /* DeadRussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadRussionViewController.swift; sourceTree = "<group>"; };
+		A12FBEE928D7070A008D62CB /* DeadRussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadRussionView.swift; sourceTree = "<group>"; };
+		A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
+		A154185428D6EEF1001C4137 /* ProfileRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingView.swift; sourceTree = "<group>"; };
+		A154185628D6EF4A001C4137 /* ProfileResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,7 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A12FBEE628D706CA008D62CB /* DeadRussion */,
 				86F6370128D6F74E002C85CA /* Results */,
 				86F636EC28D6EBF8002C85CA /* Congrats */,
 				86F636E228D6E7E0002C85CA /* Alert */,
@@ -542,6 +547,23 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		A12FBEE628D706CA008D62CB /* DeadRussion */ = {
+			isa = PBXGroup;
+			children = (
+				A12FBEE728D706FE008D62CB /* DeadRussionViewController.swift */,
+				A12FBEEB28D70718008D62CB /* View */,
+			);
+			path = DeadRussion;
+			sourceTree = "<group>";
+		};
+		A12FBEEB28D70718008D62CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A12FBEE928D7070A008D62CB /* DeadRussionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -613,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DF330A28D63FA600F30F3A /* AnyIdentifiable.swift in Sources */,
+				A12FBEEA28D7070A008D62CB /* DeadRussionView.swift in Sources */,
 				86F636F728D6EBF8002C85CA /* CongratsView.swift in Sources */,
 				86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */,
 				86DF32CF28D63C3C00F30F3A /* AppCoordinator.swift in Sources */,
@@ -688,6 +711,7 @@
 				A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */,
 				86DF32D728D63DE800F30F3A /* HomeCoordinator.swift in Sources */,
 				86F636C428D6CDD4002C85CA /* Button.swift in Sources */,
+				A12FBEE828D706FE008D62CB /* DeadRussionViewController.swift in Sources */,
 				86F6370D28D6F74E002C85CA /* ResultsProps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
