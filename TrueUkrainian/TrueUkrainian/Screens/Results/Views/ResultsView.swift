@@ -64,7 +64,6 @@ final class ResultsView: UIView {
         collectionView.register(cell: ResultsitemCell.self)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
-        addSubview(collectionView, withEdgeInsets: .zero)
     }
 
     private func setupStackView() {

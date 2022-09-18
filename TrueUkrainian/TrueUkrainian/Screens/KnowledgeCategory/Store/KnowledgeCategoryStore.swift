@@ -5,21 +5,24 @@
 //  Created by Oleksii Andriushchenko on 17.09.2022.
 //
 
+import Foundation
+
 extension KnowledgeCategoryViewController {
 
     typealias Store = ReduxStore<State, Action>
 
     struct State: Equatable {
         let category: Category
+        let topics: [Topic]
         var route: AnyIdentifiable<Route>?
     }
 
     enum Action {
-        case mock
+        case itemTapped(IndexPath)
     }
 
     enum Route {
-
+        case showTopic(TopicDetails)
     }
 
     public struct Dependencies {
@@ -28,17 +31,18 @@ extension KnowledgeCategoryViewController {
         }
     }
 
-    static func makeStore(dependencies: Dependencies, category: Category) -> Store {
+    static func makeStore(dependencies: Dependencies, details: TopicsDetails) -> Store {
         return Store(
-            initialState: makeInitialState(dependencies: dependencies, category: category),
+            initialState: makeInitialState(dependencies: dependencies, details: details),
             reducer: reduce,
             middlewares: []
         )
     }
 
-    private static func makeInitialState(dependencies: Dependencies, category: Category) -> State {
+    private static func makeInitialState(dependencies: Dependencies, details: TopicsDetails) -> State {
         return State(
-            category: category,
+            category: details.category,
+            topics: details.topics,
             route: nil
         )
     }
@@ -47,11 +51,12 @@ extension KnowledgeCategoryViewController {
 extension KnowledgeCategoryViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        let newState = state
+        var newState = state
 
         switch action {
-        case .mock:
-            break
+        case .itemTapped(let indexPath):
+            let topic = newState.topics[indexPath.item]
+            newState.route = .init(value: .showTopic(TopicDetails(category: newState.category, topic: topic)))
         }
 
         return newState

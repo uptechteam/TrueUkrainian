@@ -32,6 +32,10 @@ extension UIColor {
         return UIColor(red: 0.463, green: 0.437, blue: 0.407, alpha: 1)
     }
 
+    @nonobjc class var disableBtn: UIColor {
+        return UIColor(red: 0.538, green: 0.538, blue: 0.538, alpha: 1)
+    }
+
     @nonobjc class var mainText: UIColor {
         return UIColor(red: 0.125, green: 0.124, blue: 0.124, alpha: 1)
     }

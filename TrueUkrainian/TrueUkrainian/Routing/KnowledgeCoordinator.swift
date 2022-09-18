@@ -58,19 +58,33 @@ final class KnowledgeCoordinator: NSObject, Coordinating {
 }
 
 extension KnowledgeCoordinator: KnowledgeCategoryCoordinating {
-
-}
-
-extension KnowledgeCoordinator: KnowledgeCoordinating {
-    func showCategory(_ category: Category) {
-        let dependencies = KnowledgeCategoryViewController.Dependencies()
-        let viewController = KnowledgeCategoryViewController(
-            store: KnowledgeCategoryViewController.makeStore(dependencies: dependencies, category: category),
+    func didTapTopic(_ details: TopicDetails) {
+        let dependencies = TopicDetailsViewController.Dependencies()
+        let viewController = TopicDetailsViewController(
+            store: TopicDetailsViewController.makeStore(dependencies: dependencies, details: details),
             actionCreator: .init(dependencies: dependencies),
             coordinator: self
         )
         navigationController.pushViewController(viewController, animated: true)
     }
+}
+
+extension KnowledgeCoordinator: KnowledgeCoordinating {
+    func showCategory(_ category: Category) {
+        let provider = TopicsProvider()
+        let dependencies = KnowledgeCategoryViewController.Dependencies()
+        let details = TopicsDetails(category: category, topics: provider.getTopics(category: category))
+        let viewController = KnowledgeCategoryViewController(
+            store: KnowledgeCategoryViewController.makeStore(dependencies: dependencies, details: details),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension KnowledgeCoordinator: TopicDetailsCoordinating {
+
 }
 
 extension KnowledgeCoordinator: UINavigationControllerDelegate {

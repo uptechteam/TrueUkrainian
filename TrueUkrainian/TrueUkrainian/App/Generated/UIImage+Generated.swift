@@ -13,6 +13,18 @@ extension UIImage {
     return UIImage(named: "rightArrow")!
   }
 
+  @nonobjc class var countryIcon: UIImage {
+    return UIImage(named: "countryIcon")!
+  }
+
+  @nonobjc class var cultureIcon: UIImage {
+    return UIImage(named: "cultureIcon")!
+  }
+
+  @nonobjc class var historyIcon: UIImage {
+    return UIImage(named: "historyIcon")!
+  }
+
   @nonobjc class var arrowDown: UIImage {
     return UIImage(named: "arrowDown")!
   }
@@ -27,6 +39,14 @@ extension UIImage {
 
   @nonobjc class var close: UIImage {
     return UIImage(named: "close")!
+  }
+
+  @nonobjc class var avatar: UIImage {
+    return UIImage(named: "avatar")!
+  }
+
+  @nonobjc class var profileRightArrow: UIImage {
+    return UIImage(named: "profileRightArrow")!
   }
 
   @nonobjc class var homeSelected: UIImage {

@@ -13,6 +13,10 @@ final class HomeCategoryView: UIControl {
 
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
+    private let iconImageView = UIImageView()
+    private let lineView = UIView()
+    private let quizesLabel = UILabel()
+    private let questionsLabel = UILabel()
 
     // MARK: - Lifecycle
 
@@ -31,11 +35,16 @@ final class HomeCategoryView: UIControl {
         setupContentView()
         setupTitleLabel()
         setupDescriptionLabel()
+        setupBottomLabels()
         setupStackView()
     }
 
     private func setupContentView() {
         layer.roundCornersContinuosly(radius: 8)
+
+        iconImageView.setContentHuggingPriority(.required, for: .horizontal)
+        lineView.backgroundColor = .disableBtn
+        NSLayoutConstraint.activate([lineView.heightAnchor.constraint(equalToConstant: 1)])
     }
 
     private func setupTitleLabel() {
@@ -49,19 +58,37 @@ final class HomeCategoryView: UIControl {
         descriptionLabel.textColor = .black
     }
 
+    private func setupBottomLabels() {
+        quizesLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        quizesLabel.textColor = UIColor(red: 85.0 / 255, green: 85.0 / 255, blue: 85.0 / 255, alpha: 1)
+        questionsLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        questionsLabel.textColor = UIColor(red: 85.0 / 255, green: 85.0 / 255, blue: 85.0 / 255, alpha: 1)
+    }
+
     private func setupStackView() {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        let labelsStackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        labelsStackView.axis = .vertical
+        labelsStackView.spacing = 8
+        let topStackView = UIStackView(arrangedSubviews: [labelsStackView, iconImageView])
+        topStackView.alignment = .top
+        topStackView.spacing = 28
+        let bottomStackView = UIStackView(arrangedSubviews: [quizesLabel, UIView(), questionsLabel])
+        let stackView = UIStackView(arrangedSubviews: [topStackView, lineView, bottomStackView])
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.setCustomSpacing(14, after: topStackView)
+        stackView.setCustomSpacing(9, after: lineView)
         stackView.isUserInteractionEnabled = false
         addSubview(stackView, withEdgeInsets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
     }
 
     // MARK: - Public methods
 
-    func configure(backgroundColor: UIColor, title: String, desc: String) {
+    func configure(backgroundColor: UIColor, title: String, desc: String, icon: UIImage, quiz: String, questions: String) {
         self.backgroundColor = backgroundColor
         titleLabel.text = title
         descriptionLabel.text = desc
+        iconImageView.image = icon
+        quizesLabel.text = quiz
+        questionsLabel.text = questions
     }
 }
