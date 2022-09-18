@@ -64,6 +64,9 @@
 		86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DC28D6DC70002C85CA /* Quiz.swift */; };
 		86F636DF28D6DD18002C85CA /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DE28D6DD18002C85CA /* QuizProvider.swift */; };
 		86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */; };
+		86F636E428D6E7EC002C85CA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E328D6E7EC002C85CA /* AlertViewController.swift */; };
+		86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E528D6E7F7002C85CA /* AlertView.swift */; };
+		86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E728D6E809002C85CA /* AlertContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +129,9 @@
 		86F636DC28D6DC70002C85CA /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		86F636DE28D6DD18002C85CA /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
 		86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuiz.swift; sourceTree = "<group>"; };
+		86F636E328D6E7EC002C85CA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		86F636E528D6E7F7002C85CA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		86F636E728D6E809002C85CA /* AlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,7 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86F636E228D6E7E0002C85CA /* Alert */,
 				86F636C728D6D054002C85CA /* Question */,
 				86DF333228D66AEF00F30F3A /* KnowledgeCategory */,
 				86DF331B28D64F1200F30F3A /* Category */,
@@ -420,6 +427,16 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		86F636E228D6E7E0002C85CA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				86F636E328D6E7EC002C85CA /* AlertViewController.swift */,
+				86F636E528D6E7F7002C85CA /* AlertView.swift */,
+				86F636E728D6E809002C85CA /* AlertContentView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,6 +527,7 @@
 				86DF330428D63F1900F30F3A /* KnowledgeActionCreator.swift in Sources */,
 				86DF333F28D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift in Sources */,
 				86DF331728D64E8500F30F3A /* Category.swift in Sources */,
+				86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */,
 				86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */,
 				86DF32D928D63DEE00F30F3A /* ProfileCoordinator.swift in Sources */,
 				86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */,
@@ -533,12 +551,14 @@
 				86DF32FA28D63F1900F30F3A /* ProfileProps.swift in Sources */,
 				86F636D728D6D314002C85CA /* ProgressView.swift in Sources */,
 				86DF330628D63F1900F30F3A /* KnowledgeProps.swift in Sources */,
+				86F636E428D6E7EC002C85CA /* AlertViewController.swift in Sources */,
 				86DF331528D64C5F00F30F3A /* HomeCategoryView.swift in Sources */,
 				86DF32D328D63CE100F30F3A /* TabBarCoordinator.swift in Sources */,
 				86DF32B528D63B3100F30F3A /* AppDelegate.swift in Sources */,
 				86DF32D528D63DE300F30F3A /* KnowledgeCoordinator.swift in Sources */,
 				86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */,
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
+				86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */,
 				86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */,
 				86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */,
 				86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */,

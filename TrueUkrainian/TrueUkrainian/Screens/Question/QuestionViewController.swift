@@ -83,11 +83,27 @@ public final class QuestionViewController: UIViewController {
                 contentView.render(props: props)
             }
             .store(in: &cancellables)
+
+        state.compactMap(\.alert).removeDuplicates()
+            .map(\.value)
+            .sink { [unowned self] alert in show(alert: alert) }
+            .store(in: &cancellables)
         
         state.compactMap(\.route).removeDuplicates()
             .map(\.value)
             .sink { [unowned self] route in navigate(by: route) }
             .store(in: &cancellables)
+    }
+
+    private func show(alert: Alert) {
+        switch alert {
+        case .details(let question):
+            let viewController = AlertViewController(question: question)
+            viewController.onDismiss = { [store] in
+                store.dispatch(action: .nextTapped)
+            }
+            present(viewController, animated: false)
+        }
     }
     
     private func navigate(by route: Route) {
