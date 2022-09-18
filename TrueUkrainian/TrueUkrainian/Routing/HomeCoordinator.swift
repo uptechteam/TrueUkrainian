@@ -66,8 +66,10 @@ final class HomeCoordinator: NSObject, Coordinating {
 extension HomeCoordinator: CategoryCoordinating {
     func didTapStartQuiz(category: Category) {
         let dependencies = QuestionViewController.Dependencies()
+        let quiz = QuizProvider().getQuiz(category: category)
+        let activeQuiz = ActiveQuiz(corectAnswers: 0, index: 0, quiz: quiz)
         let viewController = QuestionViewController(
-            store: QuestionViewController.makeStore(dependencies: dependencies),
+            store: QuestionViewController.makeStore(dependencies: dependencies, activeQuiz: activeQuiz),
             actionCreator: .init(dependencies: dependencies),
             coordinator: self
         )

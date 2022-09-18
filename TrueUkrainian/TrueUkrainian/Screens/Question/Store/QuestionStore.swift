@@ -10,6 +10,7 @@ extension QuestionViewController {
     typealias Store = ReduxStore<State, Action>
 
     struct State: Equatable {
+        var activeQuiz: ActiveQuiz
         var route: AnyIdentifiable<Route>?
     }
 
@@ -27,16 +28,17 @@ extension QuestionViewController {
         }
     }
 
-    static func makeStore(dependencies: Dependencies) -> Store {
+    static func makeStore(dependencies: Dependencies, activeQuiz: ActiveQuiz) -> Store {
         return Store(
-            initialState: makeInitialState(dependencies: dependencies),
+            initialState: makeInitialState(dependencies: dependencies, activeQuiz: activeQuiz),
             reducer: reduce,
             middlewares: []
         )
     }
 
-    private static func makeInitialState(dependencies: Dependencies) -> State {
+    private static func makeInitialState(dependencies: Dependencies, activeQuiz: ActiveQuiz) -> State {
         return State(
+            activeQuiz: activeQuiz,
             route: nil
         )
     }
