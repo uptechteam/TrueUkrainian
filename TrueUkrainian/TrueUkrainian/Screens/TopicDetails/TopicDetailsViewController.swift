@@ -71,7 +71,16 @@ final class TopicDetailsViewController: UIViewController {
         state
             .first()
             .sink { [unowned self] state in
-                navigationItem.title = state.topic.name
+                switch state.category {
+                case .country:
+                    navigationItem.title = "Держава"
+
+                case .history:
+                    navigationItem.title = "Історія України"
+
+                case .culture:
+                    navigationItem.title = "Культура України"
+                }
             }
             .store(in: &cancellables)
         

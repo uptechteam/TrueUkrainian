@@ -7,6 +7,10 @@
 
 extension TopicDetailsViewController {
     static func makeProps(from state: State) -> TopicDetailsView.Props {
-        .init()
+        return .init(
+            backColor: state.category.mainColor,
+            title: state.topic.name,
+            details: state.topic.details
+        )
     }
 }
