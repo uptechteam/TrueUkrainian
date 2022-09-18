@@ -61,6 +61,10 @@ public final class ResultsViewController: UIViewController {
     }
 
     private func setupBinding() {
+        contentView.onTapItem = { [store] indexPath in
+            store.dispatch(action: .itemTapped(indexPath))
+        }
+
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 

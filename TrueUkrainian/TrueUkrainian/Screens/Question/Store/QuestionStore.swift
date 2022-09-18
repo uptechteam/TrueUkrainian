@@ -86,7 +86,7 @@ extension QuestionViewController {
             newState.isAnswered = true
             newState.answer = index
             if newState.activeQuiz.quiz.questions[newState.activeQuiz.index].correctAnswer == index {
-                newState.activeQuiz.corectAnswers += 1
+                newState.activeQuiz.correctAnswersSet.insert(newState.activeQuiz.index)
             }
 
         case .closeTapped:

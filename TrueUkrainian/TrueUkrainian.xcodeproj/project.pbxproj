@@ -78,6 +78,11 @@
 		86F6370D28D6F74E002C85CA /* ResultsProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6370728D6F74E002C85CA /* ResultsProps.swift */; };
 		86F6370E28D6F74E002C85CA /* ResultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6370828D6F74E002C85CA /* ResultsStore.swift */; };
 		86F6370F28D6F74E002C85CA /* ResultsActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6370928D6F74E002C85CA /* ResultsActionCreator.swift */; };
+		86F6371328D6F8AF002C85CA /* ResultsitemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371228D6F8AF002C85CA /* ResultsitemCell.swift */; };
+		86F6371528D6F8C1002C85CA /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371428D6F8C1002C85CA /* ReusableCell.swift */; };
+		86F6371728D6F8D9002C85CA /* UICollectionView+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */; };
+		86F6371928D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */; };
+		86F6371B28D6FF5F002C85CA /* String+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371A28D6FF5F002C85CA /* String+TU.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +159,11 @@
 		86F6370728D6F74E002C85CA /* ResultsProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsProps.swift; sourceTree = "<group>"; };
 		86F6370828D6F74E002C85CA /* ResultsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsStore.swift; sourceTree = "<group>"; };
 		86F6370928D6F74E002C85CA /* ResultsActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsActionCreator.swift; sourceTree = "<group>"; };
+		86F6371228D6F8AF002C85CA /* ResultsitemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsitemCell.swift; sourceTree = "<group>"; };
+		86F6371428D6F8C1002C85CA /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+TU.swift"; sourceTree = "<group>"; };
+		86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+TU.swift"; sourceTree = "<group>"; };
+		86F6371A28D6FF5F002C85CA /* String+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TU.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +262,10 @@
 				86DF332C28D664C900F30F3A /* BaseNavigationController.swift */,
 				86F636D628D6D314002C85CA /* ProgressView.swift */,
 				86F636C328D6CDD4002C85CA /* Button.swift */,
+				86F6371428D6F8C1002C85CA /* ReusableCell.swift */,
+				86F6371A28D6FF5F002C85CA /* String+TU.swift */,
+				86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */,
+				86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -504,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				86F6370528D6F74E002C85CA /* ResultsView.swift */,
+				86F6371228D6F8AF002C85CA /* ResultsitemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -592,6 +607,7 @@
 				86F636F728D6EBF8002C85CA /* CongratsView.swift in Sources */,
 				86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */,
 				86DF32CF28D63C3C00F30F3A /* AppCoordinator.swift in Sources */,
+				86F6371528D6F8C1002C85CA /* ReusableCell.swift in Sources */,
 				86DF32FF28D63F1900F30F3A /* HomeStore.swift in Sources */,
 				86DF332628D64F1200F30F3A /* CategoryView.swift in Sources */,
 				86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */,
@@ -608,17 +624,21 @@
 				86F636F928D6EBF8002C85CA /* CongratsProps.swift in Sources */,
 				86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */,
 				86F636F628D6EBF8002C85CA /* CongratsViewController.swift in Sources */,
+				86F6371728D6F8D9002C85CA /* UICollectionView+TU.swift in Sources */,
 				86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */,
+				86F6371328D6F8AF002C85CA /* ResultsitemCell.swift in Sources */,
 				86DF333D28D66AEF00F30F3A /* KnowledgeCategoryView.swift in Sources */,
 				86DF330428D63F1900F30F3A /* KnowledgeActionCreator.swift in Sources */,
 				86DF333F28D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift in Sources */,
 				86DF331728D64E8500F30F3A /* Category.swift in Sources */,
+				86F6371928D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift in Sources */,
 				86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */,
 				86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */,
 				86DF32D928D63DEE00F30F3A /* ProfileCoordinator.swift in Sources */,
 				86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */,
 				86F636D128D6D054002C85CA /* QuestionView.swift in Sources */,
 				86F6370E28D6F74E002C85CA /* ResultsStore.swift in Sources */,
+				86F6371B28D6FF5F002C85CA /* String+TU.swift in Sources */,
 				86DF332F28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift in Sources */,
 				86DF330128D63F1900F30F3A /* HomeActionCreator.swift in Sources */,
 				86DF330228D63F1900F30F3A /* KnowledgeViewController.swift in Sources */,

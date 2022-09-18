@@ -8,7 +8,11 @@
 import Foundation
 
 struct ActiveQuiz: Equatable {
-    var corectAnswers: Int
     var index: Int
+    var correctAnswersSet: Set<Int>
     let quiz: Quiz
+
+    var corectAnswers: Int {
+        return correctAnswersSet.count
+    }
 }
