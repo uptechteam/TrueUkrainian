@@ -7,6 +7,9 @@
 
 extension ProfileViewController {
     static func makeProps(from state: State) -> ProfileView.Props {
-        .init(resultViewProps: ResultView.Props(quizCount: 12, pointsCount: 2890))
+        .init(
+            resultViewProps: ProfileResultView.Props(quizCount: 12, pointsCount: 2890),
+            profileRatingProps: ProfileRatingView.Props(progress: 0.6)
+        )
     }
 }

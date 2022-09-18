@@ -10,16 +10,20 @@ import UIKit
 final class ProfileView: UIView {
 
     struct Props: Equatable {
-        let resultViewProps: ResultView.Props
+        let resultViewProps: ProfileResultView.Props
+        let profileRatingProps: ProfileRatingView.Props
     }
 
     // MARK: - Properties
 
     private let titleLabel = UILabel()
-    private let avatarView = AvatarView()
-    private let resultView = ResultView()
-
-
+    private let avatarView = ProfileAvatarView()
+    private let resultView = ProfileResultView()
+    private let ratingView = ProfileRatingView()
+    private let ratingButton = ProfileButton()
+    private let dictionaryButton = ProfileButton()
+    private let infoButton = ProfileButton()
+    private let buttonsStackView = UIStackView()
     private let stackView = UIStackView()
 
 
@@ -39,11 +43,15 @@ final class ProfileView: UIView {
     private func setup() {
         setupContentView()
         setupTitleLabel()
+        setupRatingButton()
+        setupDictionaryButton()
+        setupInfoButton()
+        setupButtonsStackView()
         setupStackView()
     }
 
     private func setupContentView() {
-        backgroundColor = .bg
+        backgroundColor = #colorLiteral(red: 0.9131578207, green: 0.9380688071, blue: 0.9591285586, alpha: 1)
     }
 
     private func setupTitleLabel() {
@@ -52,11 +60,34 @@ final class ProfileView: UIView {
         titleLabel.font = .systemFont(ofSize: 24)
     }
 
+    private func setupRatingButton() {
+//        ratingButton.setCustomTitle("Рейтинг друзів")
+    }
+
+    private func setupDictionaryButton() {
+//        dictionaryButton.setCustomTitle("Словник")
+    }
+
+    private func setupInfoButton() {
+//        infoButton.setCustomTitle("Що по русні?")
+    }
+
+    private func setupButtonsStackView() {
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsStackView.axis = .vertical
+        buttonsStackView.spacing = 8
+        buttonsStackView.addArrangedSubview(ratingButton)
+        buttonsStackView.addArrangedSubview(dictionaryButton)
+        buttonsStackView.addArrangedSubview(infoButton)
+    }
+
     private func setupStackView() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(avatarView)
         stackView.addArrangedSubview(resultView)
+        stackView.addArrangedSubview(ratingView)
+        stackView.addArrangedSubview(buttonsStackView)
         stackView.addArrangedSubview(UIView())
         stackView.axis = .vertical
         stackView.spacing = 32
@@ -69,25 +100,22 @@ final class ProfileView: UIView {
         ])
     }
 
-
     // MARK: - Public methods
 
     func render(props: Props) {
         resultView.render(props: props.resultViewProps)
+        ratingView.render(props: props.profileRatingProps)
     }
 }
 
-
 import UIKit
 
-final class AvatarView: UIView {
+final class ProfileButton: UIButton {
 
     // MARK: - Properties
 
-    private let avatarImageView = UIImageView()
-    private let nameLabel = UILabel()
-    private let ageLabel = UILabel()
-    private let ageStackView = UIStackView()
+    private let customTitleLabel = UILabel()
+    private let arrowImageView = UIImageView()
     private let stackView = UIStackView()
 
     // MARK: - Lifecycle
@@ -104,131 +132,44 @@ final class AvatarView: UIView {
     // MARK: - Set up
 
     private func setup() {
-        setupImageView()
-        setupNameLabel()
-        setupAgeLabel()
-        setupAgeStackView()
+        setupContentView()
+        setupCustomTitleLabel()
+        setupArrowsImageView()
         setupStackView()
     }
 
-    private func setupImageView() {
-        avatarImageView.image = UIImage(named: "avatar")
+    private func setupContentView() {
+        layer.addBorder(color: .borderColor, width: 1)
     }
 
-    private func setupNameLabel() {
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Leila"
-        nameLabel.font = .systemFont(ofSize: 24)
+    private func setupCustomTitleLabel() {
+        customTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        customTitleLabel.font = .systemFont(ofSize: 20)
     }
 
-    private func setupAgeLabel() {
-        ageLabel.translatesAutoresizingMaskIntoConstraints = false
-        ageLabel.text = "24 роки"
-        ageLabel.textColor = .secondaryText
-        ageLabel.font = .systemFont(ofSize: 16)
-    }
-
-    private func setupAgeStackView() {
-        ageStackView.translatesAutoresizingMaskIntoConstraints = false
-        ageStackView.spacing = 1
-        ageStackView.axis = .vertical
-        ageStackView.addArrangedSubview(nameLabel)
-        ageStackView.addArrangedSubview(ageLabel)
+    private func setupArrowsImageView() {
+        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+        arrowImageView.image = UIImage(named: "profileRightArrow")
     }
 
     private func setupStackView() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addArrangedSubview(avatarImageView)
-        stackView.addArrangedSubview(ageStackView)
+        stackView.addArrangedSubview(customTitleLabel)
         stackView.addArrangedSubview(UIView())
-        stackView.spacing = 16
-        stackView.alignment = .bottom
+        stackView.addArrangedSubview(arrowImageView)
         addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-    }
-}
-
-import UIKit
-
-final class ResultView: UIView {
-
-    struct Props: Equatable {
-        let quizCount: Int
-        let pointsCount: Int
-    }
-
-    // MARK: - Properties
-
-    private let quizCountLabel = UILabel()
-    private let pointsCountLabel = UILabel()
-    private let stackView = UIStackView()
-
-    // MARK: - Lifecycle
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - Set up
-
-    private func setup() {
-        setupQuizCountLabel()
-        setupPointsCountLabel()
-        setupStackView()
-    }
-
-    private func setupQuizCountLabel() {
-        quizCountLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    private func setupPointsCountLabel() {
-        pointsCountLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    private func setupStackView() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addArrangedSubview(quizCountLabel)
-        stackView.addArrangedSubview(pointsCountLabel)
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 18),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18)
         ])
     }
 
     // MARK: - Public methods
 
-    func render(props: Props) {
-        let regularStringAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 20, weight: .light)]
-        let boldStringAttributes: [NSAttributedString.Key: Any] =
-        [.font: UIFont.boldSystemFont(ofSize: 20)]
-
-        let quizString = NSMutableAttributedString(string: "Пройдено ", attributes: regularStringAttributes)
-        let quizCountString = NSAttributedString(string: "\(props.quizCount)", attributes: boldStringAttributes)
-        let quizNameString = NSAttributedString(string: " вікторин")
-        quizString.append(quizCountString)
-        quizString.append(quizNameString)
-        quizCountLabel.attributedText = quizString
-
-        let pointsString = NSMutableAttributedString(string: "Кількість балів: ", attributes: regularStringAttributes)
-        let pointsCountString = NSAttributedString(string: "\(props.pointsCount)", attributes: boldStringAttributes)
-        pointsString.append(pointsCountString)
-        pointsCountLabel.attributedText = pointsString
-
+    func setCustomTitle(_ text: String) {
+        self.customTitleLabel.text = text
     }
 }
 

@@ -59,4 +59,8 @@ extension UIColor {
     @nonobjc class var wrongAnswer: UIColor {
       return UIColor(red: 1, green: 0.833, blue: 0.913, alpha: 1)
     }
+
+    @nonobjc class var borderColor: UIColor {
+        return UIColor(red: 0.721, green: 0.721, blue: 0.721, alpha: 1)
+    }
 }
