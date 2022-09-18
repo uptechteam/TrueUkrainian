@@ -5,6 +5,8 @@
 //  Created by Oleksii Andriushchenko on 18.09.2022.
 //
 
+import UIKit
+
 extension QuestionViewController {
     static func makeProps(from state: State) -> QuestionView.Props {
         let questionIndex = state.activeQuiz.index
@@ -19,7 +21,8 @@ extension QuestionViewController {
             answerTwoViewProps: makeAnswerProps(state: state, index: 1),
             answerThreeViewProps: makeAnswerProps(state: state, index: 2),
             answerFourViewProps: makeAnswerProps(state: state, index: 3),
-            buttonTitle: "Обери відповідь"
+            isButtonEnabled: state.isAnswered,
+            buttonTitle: makeButtonTitle(state: state)
         )
     }
 
@@ -38,9 +41,29 @@ extension QuestionViewController {
 
     static func makeAnswerProps(state: State, index: Int) -> QuestionAnswerView.Props {
         let question = state.activeQuiz.quiz.questions[state.activeQuiz.index]
+        var backColor = UIColor.white
+        if state.isAnswered {
+            if question.correctAnswer == index {
+                backColor = .correctAnswer
+            } else if state.answer == index {
+                backColor = .wrongAnswer
+            }
+        }
         return .init(
-            backColor: .white,
+            backColor: backColor,
             text: question.answers[index]
         )
+    }
+
+    private static func makeButtonTitle(state: State) -> String {
+        guard state.isAnswered else {
+            return "Обери відповідь"
+        }
+
+        if state.answer == state.activeQuiz.quiz.questions[state.activeQuiz.index].correctAnswer {
+            return "Наступний"
+        } else {
+            return "Дивись деталі"
+        }
     }
 }

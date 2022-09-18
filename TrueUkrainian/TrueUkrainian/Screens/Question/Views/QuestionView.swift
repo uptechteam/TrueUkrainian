@@ -19,6 +19,7 @@ final class QuestionView: UIView {
         let answerTwoViewProps: QuestionAnswerView.Props
         let answerThreeViewProps: QuestionAnswerView.Props
         let answerFourViewProps: QuestionAnswerView.Props
+        let isButtonEnabled: Bool
         let buttonTitle: String
     }
 
@@ -148,6 +149,7 @@ final class QuestionView: UIView {
         answerTwo.render(props: props.answerTwoViewProps)
         answerThree.render(props: props.answerThreeViewProps)
         answerFour.render(props: props.answerFourViewProps)
+        actionButton.isEnabled = props.isButtonEnabled
         actionButton.setTitle(props.buttonTitle)
     }
 }

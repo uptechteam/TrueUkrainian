@@ -90,6 +90,23 @@ extension HomeCoordinator: HomeCoordinating {
 }
 
 extension HomeCoordinator: QuestionCoordinating {
+    func didFinishQuiz(activeQuiz: ActiveQuiz) {
+        let viewController = makeHomeViewController()
+        navigationController.setViewControllers([viewController], animated: true)
+    }
+
+    func didProceedNext(activeQuiz: ActiveQuiz) {
+        var quiz = activeQuiz
+        quiz.index += 1
+        let dependencies = QuestionViewController.Dependencies()
+        let viewController = QuestionViewController(
+            store: QuestionViewController.makeStore(dependencies: dependencies, activeQuiz: quiz),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.setViewControllers([viewController], animated: true)
+    }
+
     func didTapCloseQuiz() {
         let viewController = makeHomeViewController()
         navigationController.setViewControllers([viewController], animated: true)

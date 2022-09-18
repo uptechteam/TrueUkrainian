@@ -8,8 +8,10 @@
 import Combine
 import UIKit
 
-public protocol QuestionCoordinating: AnyObject {
+protocol QuestionCoordinating: AnyObject {
     func didTapCloseQuiz()
+    func didFinishQuiz(activeQuiz: ActiveQuiz)
+    func didProceedNext(activeQuiz: ActiveQuiz)
 }
 
 public final class QuestionViewController: UIViewController {
@@ -60,6 +62,14 @@ public final class QuestionViewController: UIViewController {
     }
 
     private func setupBinding() {
+        contentView.onTapAnswer = { [store] index in
+            store.dispatch(action: .answerTapped(index))
+        }
+
+        contentView.onTapAction = { [store] in
+            store.dispatch(action: .actionTapped)
+        }
+
         contentView.onTapClose = { [store] in
             store.dispatch(action: .closeTapped)
         }
@@ -82,8 +92,14 @@ public final class QuestionViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .finish:
+        case .close:
             coordinator.didTapCloseQuiz()
+
+        case .nextQuestion(let quiz):
+            coordinator.didProceedNext(activeQuiz: quiz)
+
+        case .finish(let quiz):
+            coordinator.didFinishQuiz(activeQuiz: quiz)
         }
     }
 }
