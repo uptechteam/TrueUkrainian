@@ -51,6 +51,8 @@
 		86DF333E28D66AEF00F30F3A /* KnowledgeCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333828D66AEF00F30F3A /* KnowledgeCategoryStore.swift */; };
 		86DF333F28D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333928D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift */; };
 		86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */; };
+		86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */; };
+		86F636C428D6CDD4002C85CA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C328D6CDD4002C85CA /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		86DF333828D66AEF00F30F3A /* KnowledgeCategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryStore.swift; sourceTree = "<group>"; };
 		86DF333928D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryActionCreator.swift; sourceTree = "<group>"; };
 		86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryProps.swift; sourceTree = "<group>"; };
+		86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingsView.swift; sourceTree = "<group>"; };
+		86F636C328D6CDD4002C85CA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 				86DF330D28D6415100F30F3A /* UIView+TU.swift */,
 				86DF330928D63FA600F30F3A /* AnyIdentifiable.swift */,
 				86DF332C28D664C900F30F3A /* BaseNavigationController.swift */,
+				86F636C328D6CDD4002C85CA /* Button.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF331F28D64F1200F30F3A /* CategoryView.swift */,
+				86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				86DF333C28D66AEF00F30F3A /* KnowledgeCategoryViewController.swift in Sources */,
 				86DF330828D63F4800F30F3A /* Redux.swift in Sources */,
 				86DF32F928D63F1900F30F3A /* ProfileView.swift in Sources */,
+				86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */,
 				86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */,
 				86DF333D28D66AEF00F30F3A /* KnowledgeCategoryView.swift in Sources */,
 				86DF330428D63F1900F30F3A /* KnowledgeActionCreator.swift in Sources */,
@@ -469,6 +476,7 @@
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
 				86DF32FD28D63F1900F30F3A /* HomeViewController.swift in Sources */,
 				86DF32D728D63DE800F30F3A /* HomeCoordinator.swift in Sources */,
+				86F636C428D6CDD4002C85CA /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

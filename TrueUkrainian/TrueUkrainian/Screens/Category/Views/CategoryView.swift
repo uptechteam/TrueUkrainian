@@ -10,12 +10,16 @@ import UIKit
 final class CategoryView: UIView {
 
     struct Props: Equatable {
-
+        let backgroundColor: UIColor
+        let description: String
     }
 
     // MARK: - Properties
 
-    private let titleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let levelView = CategorySettingsView()
+    private let questionCountView = CategorySettingsView()
+    private let startButton = Button()
 
     // MARK: - Lifecycle
 
@@ -32,15 +36,49 @@ final class CategoryView: UIView {
 
     private func setup() {
         setupContentViuew()
+        setupDescLabel()
+        setupSettings()
+        setupStartButton()
+        setupStackView()
     }
 
     private func setupContentViuew() {
         backgroundColor = .bg
     }
 
+    private func setupDescLabel() {
+        descriptionLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        descriptionLabel.textColor = .mainText
+        descriptionLabel.numberOfLines = 0
+    }
+
+    private func setupSettings() {
+        levelView.configure(title: "Рівень", value: "Легкий")
+        questionCountView.configure(title: "Кількість запитань", value: "10")
+    }
+
+    private func setupStartButton() {
+        startButton.setTitle("Розпочати!")
+    }
+
+    private func setupStackView() {
+        let stackView = UIStackView(
+            arrangedSubviews: [descriptionLabel, levelView, questionCountView, UIView(), startButton]
+        )
+        stackView.axis = .vertical
+        stackView.setCustomSpacing(62, after: descriptionLabel)
+        stackView.setCustomSpacing(16, after: levelView)
+        addSubview(
+            stackView,
+            withEdgeInsets: UIEdgeInsets(top: 32, left: 24, bottom: 60, right: 24),
+            isSafeAreaRequired: true
+        )
+    }
+
     // MARK: - Public methods
 
     func render(props: Props) {
-
+        backgroundColor = props.backgroundColor
+        descriptionLabel.text = props.description
     }
 }
