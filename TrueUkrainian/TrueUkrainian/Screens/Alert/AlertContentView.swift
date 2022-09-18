@@ -55,6 +55,7 @@ final class AlertContentView: UIView {
     private func setupMessageLabel() {
         messageLabel.numberOfLines = 0
         messageLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        messageLabel.textColor = .mainText
         messageLabel.text = question.correctAnswerDescription
     }
 

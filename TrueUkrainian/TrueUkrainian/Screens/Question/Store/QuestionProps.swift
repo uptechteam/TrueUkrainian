@@ -12,7 +12,7 @@ extension QuestionViewController {
         let questionIndex = state.activeQuiz.index
         let questions = state.activeQuiz.quiz.questions
         return .init(
-            progress: 0.5,
+            progress: Double(questionIndex + 1) / Double(questions.count),
             category: makeCategoryText(category: state.activeQuiz.quiz.category),
             counterText: "\(questionIndex + 1)/\(questions.count)",
             questionBackColor: state.activeQuiz.quiz.category.mainColor,
