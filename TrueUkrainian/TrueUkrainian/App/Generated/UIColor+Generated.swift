@@ -17,7 +17,7 @@ extension UIColor {
     }
 
     @nonobjc class var btn: UIColor {
-        return UIColor(red: 0.208, green: 0.333, blue: 0.714, alpha: 1)
+        return UIColor(red: 0.287, green: 0.287, blue: 0.287, alpha: 1)
     }
 
     @nonobjc class var darkGreen: UIColor {
@@ -51,7 +51,7 @@ extension UIColor {
     @nonobjc class var menuYellow: UIColor {
         return UIColor(red: 0.957, green: 0.937, blue: 0.914, alpha: 1)
     }
-    
+
     @nonobjc class var secondaryText: UIColor {
         return UIColor(red: 0.479, green: 0.479, blue: 0.479, alpha: 1)
     }

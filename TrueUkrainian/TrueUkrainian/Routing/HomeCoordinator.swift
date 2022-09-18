@@ -82,6 +82,16 @@ extension HomeCoordinator: CongratsCoordinating {
         let viewController = makeHomeViewController()
         navigationController.setViewControllers([viewController], animated: false)
     }
+
+    func didTapResults(activeQuiz: ActiveQuiz) {
+        let dependencies = ResultsViewController.Dependencies()
+        let viewController = ResultsViewController(
+            store: ResultsViewController.makeStore(dependencies: dependencies),
+            actionCreator: .init(dependencies: dependencies),
+            coordinator: self
+        )
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 extension HomeCoordinator: HomeCoordinating {
@@ -123,6 +133,10 @@ extension HomeCoordinator: QuestionCoordinating {
         let viewController = makeHomeViewController()
         navigationController.setViewControllers([viewController], animated: true)
     }
+}
+
+extension HomeCoordinator: ResultsCoordinating {
+    
 }
 
 extension HomeCoordinator: UINavigationControllerDelegate {

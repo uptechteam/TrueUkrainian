@@ -11,15 +11,23 @@ extension CongratsViewController {
 
     struct State: Equatable {
         let activeQuiz: ActiveQuiz
+        var alert: AnyIdentifiable<Alert>?
         var route: AnyIdentifiable<Route>?
     }
 
     enum Action {
         case homeTapped
+        case resultsTapped
+        case shareTapped
+    }
+
+    enum Alert {
+        case share
     }
 
     enum Route {
         case finish
+        case results(ActiveQuiz)
     }
 
     struct Dependencies {
@@ -39,6 +47,7 @@ extension CongratsViewController {
     static func makeInitialState(dependencies: Dependencies, activeQuiz: ActiveQuiz) -> State {
         return State(
             activeQuiz: activeQuiz,
+            alert: nil,
             route: nil
         )
     }
@@ -52,6 +61,12 @@ extension CongratsViewController {
         switch action {
         case .homeTapped:
             newState.route = .init(value: .finish)
+
+        case .resultsTapped:
+            newState.route = .init(value: .results(newState.activeQuiz))
+
+        case .shareTapped:
+            newState.alert = .init(value: .share)
         }
 
         return newState
