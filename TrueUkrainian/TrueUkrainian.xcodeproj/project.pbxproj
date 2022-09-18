@@ -64,9 +64,6 @@
 		86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DC28D6DC70002C85CA /* Quiz.swift */; };
 		86F636DF28D6DD18002C85CA /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DE28D6DD18002C85CA /* QuizProvider.swift */; };
 		86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */; };
-		A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */; };
-		A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185428D6EEF1001C4137 /* ProfileRatingView.swift */; };
-		A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185628D6EF4A001C4137 /* ProfileResultView.swift */; };
 		86F636E428D6E7EC002C85CA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E328D6E7EC002C85CA /* AlertViewController.swift */; };
 		86F636E628D6E7F7002C85CA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E528D6E7F7002C85CA /* AlertView.swift */; };
 		86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E728D6E809002C85CA /* AlertContentView.swift */; };
@@ -86,6 +83,10 @@
 		86F6371728D6F8D9002C85CA /* UICollectionView+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */; };
 		86F6371928D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */; };
 		86F6371B28D6FF5F002C85CA /* String+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371A28D6FF5F002C85CA /* String+TU.swift */; };
+		86F6371D28D70482002C85CA /* KnowledgeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371C28D70482002C85CA /* KnowledgeCategoryCell.swift */; };
+		A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */; };
+		A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185428D6EEF1001C4137 /* ProfileRatingView.swift */; };
+		A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185628D6EF4A001C4137 /* ProfileResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,9 +149,6 @@
 		86F636DC28D6DC70002C85CA /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		86F636DE28D6DD18002C85CA /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
 		86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuiz.swift; sourceTree = "<group>"; };
-		A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
-		A154185428D6EEF1001C4137 /* ProfileRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingView.swift; sourceTree = "<group>"; };
-		A154185628D6EF4A001C4137 /* ProfileResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResultView.swift; sourceTree = "<group>"; };
 		86F636E328D6E7EC002C85CA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		86F636E528D6E7F7002C85CA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		86F636E728D6E809002C85CA /* AlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +168,10 @@
 		86F6371628D6F8D9002C85CA /* UICollectionView+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+TU.swift"; sourceTree = "<group>"; };
 		86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+TU.swift"; sourceTree = "<group>"; };
 		86F6371A28D6FF5F002C85CA /* String+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TU.swift"; sourceTree = "<group>"; };
+		86F6371C28D70482002C85CA /* KnowledgeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryCell.swift; sourceTree = "<group>"; };
+		A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
+		A154185428D6EEF1001C4137 /* ProfileRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingView.swift; sourceTree = "<group>"; };
+		A154185628D6EF4A001C4137 /* ProfileResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF333628D66AEF00F30F3A /* KnowledgeCategoryView.swift */,
+				86F6371C28D70482002C85CA /* KnowledgeCategoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				86F6370C28D6F74E002C85CA /* ResultsView.swift in Sources */,
 				86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */,
 				A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */,
+				86F6371D28D70482002C85CA /* KnowledgeCategoryCell.swift in Sources */,
 				86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */,
 				86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */,
 				86DF330028D63F1900F30F3A /* HomeProps.swift in Sources */,
