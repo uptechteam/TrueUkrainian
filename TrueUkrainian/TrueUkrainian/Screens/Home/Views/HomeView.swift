@@ -63,11 +63,11 @@ final class HomeView: UIView {
     }
 
     private func setupCategories() {
-        countryView.configure(backgroundColor: .menuGreen, title: "Держава", desc: "Опис", icon: .countryIcon, quiz: "1 вікторина", questions: "10 питань")
+        countryView.configure(backgroundColor: .menuGreen, title: "Держава", desc: "Структура державної влади", icon: .countryIcon, quiz: "1 вікторина", questions: "10 питань")
         countryView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCountry() }), for: .touchUpInside)
-        historyView.configure(backgroundColor: .menuBlue, title: "Історія України", desc: "Опис", icon: .historyIcon, quiz: "1 вікторина", questions: "10 питань")
+        historyView.configure(backgroundColor: .menuBlue, title: "Історія України", desc: "Історія української землі і українського народу", icon: .historyIcon, quiz: "1 вікторина", questions: "10 питань")
         historyView.addAction(UIAction(handler: { [weak self] _ in self?.onTapHistory() }), for: .touchUpInside)
-        cultureView.configure(backgroundColor: .menuYellow, title: "Культура України", desc: "Опис", icon: .cultureIcon, quiz: "1 вікторина", questions: "10 питань")
+        cultureView.configure(backgroundColor: .menuYellow, title: "Культура України", desc: "Особливості культури нашої країни", icon: .cultureIcon, quiz: "1 вікторина", questions: "10 питань")
         cultureView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCulture() }), for: .touchUpInside)
     }
 
