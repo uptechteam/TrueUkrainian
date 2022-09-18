@@ -19,7 +19,7 @@ extension KnowledgeViewController {
 
         // MARK: - Lifecycle
 
-        public init(dependencies: Dependencies) {
+        init(dependencies: Dependencies) {
             self.dependencies = dependencies
         }
     }

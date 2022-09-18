@@ -15,6 +15,16 @@ final class HomeView: UIView {
 
     // MARK: - Properties
 
+    private let titleLabel = UILabel()
+    private let categoriesLabel = UILabel()
+    private let countryView = HomeCategoryView()
+    private let historyView = HomeCategoryView()
+    private let cultureView = HomeCategoryView()
+    // callbacks
+    var onTapCountry: () -> Void = { }
+    var onTapHistory: () -> Void = { }
+    var onTapCulture: () -> Void = { }
+
     // MARK: - Lifecycle
 
     override init(frame: CGRect) {
@@ -30,10 +40,49 @@ final class HomeView: UIView {
 
     private func setup() {
         setupContentView()
+        setupTitleLabel()
+        setupCategoriesLabel()
+        setupCategories()
+        setupStackView()
     }
 
     private func setupContentView() {
         backgroundColor = .bg
+    }
+
+    private func setupTitleLabel() {
+        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.textColor = .mainText
+        titleLabel.text = "Нумо Розумнішати!"
+    }
+
+    private func setupCategoriesLabel() {
+        categoriesLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        categoriesLabel.textColor = .secondaryText
+        categoriesLabel.text = "Категорії Вікторини"
+    }
+
+    private func setupCategories() {
+        countryView.configure(backgroundColor: .menuGreen, title: "Держава", desc: "Опис")
+        countryView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCountry() }), for: .touchUpInside)
+        historyView.configure(backgroundColor: .menuBlue, title: "Історія України", desc: "Опис")
+        historyView.addAction(UIAction(handler: { [weak self] _ in self?.onTapHistory() }), for: .touchUpInside)
+        cultureView.configure(backgroundColor: .menuYellow, title: "Культура України", desc: "Опис")
+        cultureView.addAction(UIAction(handler: { [weak self] _ in self?.onTapCulture() }), for: .touchUpInside)
+    }
+
+    private func setupStackView() {
+        let stackView = UIStackView(
+            arrangedSubviews: [titleLabel, categoriesLabel, countryView, historyView, cultureView, UIView()]
+        )
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.setCustomSpacing(32, after: titleLabel)
+        addSubview(
+            stackView,
+            withEdgeInsets: UIEdgeInsets(top: 32, left: 24, bottom: 24, right: 24),
+            isSafeAreaRequired: true
+        )
     }
 
     // MARK: - Public methods

@@ -8,11 +8,11 @@
 import Combine
 import UIKit
 
-public protocol HomeCoordinating: AnyObject {
-
+protocol HomeCoordinating: AnyObject {
+    func showCategory(_ category: Category)
 }
 
-public final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -24,7 +24,7 @@ public final class HomeViewController: UIViewController {
 
     // MARK: - Lifecycle
 
-    public init(
+    init(
         store: Store,
         actionCreator: ActionCreator,
         coordinator: HomeCoordinating
@@ -33,6 +33,7 @@ public final class HomeViewController: UIViewController {
         self.actionCreator = actionCreator
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
+        setupUI()
     }
 
     required init?(coder: NSCoder) {
@@ -54,7 +55,28 @@ public final class HomeViewController: UIViewController {
 
     // MARK: - Private methods
 
+    private func setupUI() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            image: .back,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+    }
+
     private func setupBinding() {
+        contentView.onTapCountry = { [store] in
+            store.dispatch(action: .categoryTapped(.country))
+        }
+
+        contentView.onTapHistory = { [store] in
+            store.dispatch(action: .categoryTapped(.history))
+        }
+
+        contentView.onTapCulture = { [store] in
+            store.dispatch(action: .categoryTapped(.culture))
+        }
+
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
@@ -75,7 +97,8 @@ public final class HomeViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-            
+        case .showCategory(let category):
+            coordinator.showCategory(category)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  KnowledgeViewController.swift
+//  CategoryViewController.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -8,18 +8,18 @@
 import Combine
 import UIKit
 
-protocol KnowledgeCoordinating: AnyObject {
-    func showCategory(_ category: Category)
+protocol CategoryCoordinating: AnyObject {
+    func didTapStartQuiz(category: Category)
 }
 
-public final class KnowledgeViewController: UIViewController {
+final class CategoryViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = KnowledgeView()
-    private unowned let coordinator: KnowledgeCoordinating
+    private let contentView = CategoryView()
+    private unowned let coordinator: CategoryCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -27,7 +27,7 @@ public final class KnowledgeViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: KnowledgeCoordinating
+        coordinator: CategoryCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -56,26 +56,38 @@ public final class KnowledgeViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupUI() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            image: .back,
-            style: .plain,
-            target: nil,
-            action: nil
-        )
+        hidesBottomBarWhenPushed = true
+        navigationItem.title = "Назва"
     }
 
     private func setupBinding() {
-        contentView.onTapCategory = { [store] category in
-            store.dispatch(action: .categoryTapped(category))
+        contentView.onTapStart = { [store] in
+            store.dispatch(action: .startTapped)
         }
 
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map(KnowledgeViewController.makeProps)
+            .map(CategoryViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
+            }
+            .store(in: &cancellables)
+
+        state
+            .first()
+            .sink { [unowned self] state in
+                switch state.category {
+                case .country:
+                    navigationItem.title = "Держава"
+
+                case .history:
+                    navigationItem.title = "Історія України"
+
+                case .culture:
+                    navigationItem.title = "Культура України"
+                }
             }
             .store(in: &cancellables)
         
@@ -87,8 +99,8 @@ public final class KnowledgeViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .showCategory(let category):
-            coordinator.showCategory(category)
+        case .startQuiz(let category):
+            coordinator.didTapStartQuiz(category: category)
         }
     }
 }

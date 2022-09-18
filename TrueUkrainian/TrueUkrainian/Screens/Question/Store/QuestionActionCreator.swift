@@ -1,16 +1,16 @@
 //
-//  HomeActionCreator.swift
+//  QuestionActionCreator.swift
 //  TrueUkrainian
 //
-//  Created by Oleksii Andriushchenko on 17.09.2022.
+//  Created by Oleksii Andriushchenko on 18.09.2022.
 //
 
 import Foundation
 import Combine
 
-extension HomeViewController {
+extension QuestionViewController {
 
-    final class ActionCreator {
+    public final class ActionCreator {
 
         // MARK: - Properties
 

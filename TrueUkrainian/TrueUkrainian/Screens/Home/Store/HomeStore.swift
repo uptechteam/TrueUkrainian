@@ -7,27 +7,27 @@
 
 extension HomeViewController {
 
-    public typealias Store = ReduxStore<State, Action>
+    typealias Store = ReduxStore<State, Action>
 
     public struct State: Equatable {
         var route: AnyIdentifiable<Route>?
     }
 
-    public enum Action {
-        case mock
+    enum Action {
+        case categoryTapped(Category)
     }
 
     enum Route {
-
+        case showCategory(Category)
     }
 
-    public struct Dependencies {
+    struct Dependencies {
         public init() {
 
         }
     }
 
-    public static func makeStore(dependencies: Dependencies) -> Store {
+    static func makeStore(dependencies: Dependencies) -> Store {
         return Store(
             initialState: makeInitialState(dependencies: dependencies),
             reducer: reduce,
@@ -45,11 +45,11 @@ extension HomeViewController {
 extension HomeViewController {
     static func reduce(state: State, action: Action) -> State {
 
-        let newState = state
+        var newState = state
 
         switch action {
-        case .mock:
-            break
+        case .categoryTapped(let category):
+            newState.route = .init(value: .showCategory(category))
         }
 
         return newState

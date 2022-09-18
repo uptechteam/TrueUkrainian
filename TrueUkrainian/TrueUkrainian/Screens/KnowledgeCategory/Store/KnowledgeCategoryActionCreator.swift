@@ -1,5 +1,5 @@
 //
-//  HomeActionCreator.swift
+//  KnowledgeCategoryActionCreator.swift
 //  TrueUkrainian
 //
 //  Created by Oleksii Andriushchenko on 17.09.2022.
@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-extension HomeViewController {
+extension KnowledgeCategoryViewController {
 
-    final class ActionCreator {
+    public final class ActionCreator {
 
         // MARK: - Properties
 
@@ -19,7 +19,7 @@ extension HomeViewController {
 
         // MARK: - Lifecycle
 
-        init(dependencies: Dependencies) {
+        public init(dependencies: Dependencies) {
             self.dependencies = dependencies
         }
     }

@@ -37,6 +37,33 @@
 		86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF330D28D6415100F30F3A /* UIView+TU.swift */; };
 		86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331028D6464700F30F3A /* UIImage+Generated.swift */; };
 		86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331228D6492500F30F3A /* UIColor+Generated.swift */; };
+		86DF331528D64C5F00F30F3A /* HomeCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331428D64C5F00F30F3A /* HomeCategoryView.swift */; };
+		86DF331728D64E8500F30F3A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331628D64E8500F30F3A /* Category.swift */; };
+		86DF332528D64F1200F30F3A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331D28D64F1200F30F3A /* CategoryViewController.swift */; };
+		86DF332628D64F1200F30F3A /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF331F28D64F1200F30F3A /* CategoryView.swift */; };
+		86DF332728D64F1200F30F3A /* CategoryActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332128D64F1200F30F3A /* CategoryActionCreator.swift */; };
+		86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332228D64F1200F30F3A /* CategoryProps.swift */; };
+		86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332328D64F1200F30F3A /* CategoryStore.swift */; };
+		86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332C28D664C900F30F3A /* BaseNavigationController.swift */; };
+		86DF332F28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF332E28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift */; };
+		86DF333C28D66AEF00F30F3A /* KnowledgeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333428D66AEF00F30F3A /* KnowledgeCategoryViewController.swift */; };
+		86DF333D28D66AEF00F30F3A /* KnowledgeCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333628D66AEF00F30F3A /* KnowledgeCategoryView.swift */; };
+		86DF333E28D66AEF00F30F3A /* KnowledgeCategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333828D66AEF00F30F3A /* KnowledgeCategoryStore.swift */; };
+		86DF333F28D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333928D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift */; };
+		86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */; };
+		86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */; };
+		86F636C428D6CDD4002C85CA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C328D6CDD4002C85CA /* Button.swift */; };
+		86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636C828D6D054002C85CA /* QuestionViewController.swift */; };
+		86F636D128D6D054002C85CA /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CA28D6D054002C85CA /* QuestionView.swift */; };
+		86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */; };
+		86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CE28D6D054002C85CA /* QuestionProps.swift */; };
+		86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636CF28D6D054002C85CA /* QuestionStore.swift */; };
+		86F636D728D6D314002C85CA /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636D628D6D314002C85CA /* ProgressView.swift */; };
+		86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636D828D6D62F002C85CA /* QuestionInfoView.swift */; };
+		86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */; };
+		86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DC28D6DC70002C85CA /* Quiz.swift */; };
+		86F636DF28D6DD18002C85CA /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636DE28D6DD18002C85CA /* QuizProvider.swift */; };
+		86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +99,33 @@
 		86DF330D28D6415100F30F3A /* UIView+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TU.swift"; sourceTree = "<group>"; };
 		86DF331028D6464700F30F3A /* UIImage+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Generated.swift"; sourceTree = "<group>"; };
 		86DF331228D6492500F30F3A /* UIColor+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Generated.swift"; sourceTree = "<group>"; };
+		86DF331428D64C5F00F30F3A /* HomeCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryView.swift; sourceTree = "<group>"; };
+		86DF331628D64E8500F30F3A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		86DF331D28D64F1200F30F3A /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		86DF331F28D64F1200F30F3A /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		86DF332128D64F1200F30F3A /* CategoryActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryActionCreator.swift; sourceTree = "<group>"; };
+		86DF332228D64F1200F30F3A /* CategoryProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryProps.swift; sourceTree = "<group>"; };
+		86DF332328D64F1200F30F3A /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
+		86DF332C28D664C900F30F3A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		86DF332E28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryTypeView.swift; sourceTree = "<group>"; };
+		86DF333428D66AEF00F30F3A /* KnowledgeCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryViewController.swift; sourceTree = "<group>"; };
+		86DF333628D66AEF00F30F3A /* KnowledgeCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryView.swift; sourceTree = "<group>"; };
+		86DF333828D66AEF00F30F3A /* KnowledgeCategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryStore.swift; sourceTree = "<group>"; };
+		86DF333928D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryActionCreator.swift; sourceTree = "<group>"; };
+		86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryProps.swift; sourceTree = "<group>"; };
+		86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySettingsView.swift; sourceTree = "<group>"; };
+		86F636C328D6CDD4002C85CA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		86F636C828D6D054002C85CA /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		86F636CA28D6D054002C85CA /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionActionCreator.swift; sourceTree = "<group>"; };
+		86F636CE28D6D054002C85CA /* QuestionProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionProps.swift; sourceTree = "<group>"; };
+		86F636CF28D6D054002C85CA /* QuestionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionStore.swift; sourceTree = "<group>"; };
+		86F636D628D6D314002C85CA /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		86F636D828D6D62F002C85CA /* QuestionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionInfoView.swift; sourceTree = "<group>"; };
+		86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerView.swift; sourceTree = "<group>"; };
+		86F636DC28D6DC70002C85CA /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		86F636DE28D6DD18002C85CA /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
+		86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveQuiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +183,9 @@
 		86DF32C928D63B5400F30F3A /* DomainModels */ = {
 			isa = PBXGroup;
 			children = (
+				86DF331628D64E8500F30F3A /* Category.swift */,
+				86F636DC28D6DC70002C85CA /* Quiz.swift */,
+				86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */,
 			);
 			path = DomainModels;
 			sourceTree = "<group>";
@@ -136,6 +193,9 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86F636C728D6D054002C85CA /* Question */,
+				86DF333228D66AEF00F30F3A /* KnowledgeCategory */,
+				86DF331B28D64F1200F30F3A /* Category */,
 				86DF32E828D63F1900F30F3A /* Home */,
 				86DF32F028D63F1900F30F3A /* Knowledge */,
 				86DF32E028D63F1900F30F3A /* Profile */,
@@ -146,6 +206,7 @@
 		86DF32CB28D63B6800F30F3A /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				86F636DE28D6DD18002C85CA /* QuizProvider.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -157,6 +218,9 @@
 				86DF330B28D6412B00F30F3A /* CALayer+TU.swift */,
 				86DF330D28D6415100F30F3A /* UIView+TU.swift */,
 				86DF330928D63FA600F30F3A /* AnyIdentifiable.swift */,
+				86DF332C28D664C900F30F3A /* BaseNavigationController.swift */,
+				86F636D628D6D314002C85CA /* ProgressView.swift */,
+				86F636C328D6CDD4002C85CA /* Button.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -216,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF32EB28D63F1900F30F3A /* HomeView.swift */,
+				86DF331428D64C5F00F30F3A /* HomeCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				86DF32F328D63F1900F30F3A /* KnowledgeView.swift */,
+				86DF332E28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +331,93 @@
 				86DF331228D6492500F30F3A /* UIColor+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		86DF331B28D64F1200F30F3A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				86DF331D28D64F1200F30F3A /* CategoryViewController.swift */,
+				86DF331E28D64F1200F30F3A /* Views */,
+				86DF332028D64F1200F30F3A /* Store */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		86DF331E28D64F1200F30F3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86DF331F28D64F1200F30F3A /* CategoryView.swift */,
+				86F636C128D6CCD9002C85CA /* CategorySettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86DF332028D64F1200F30F3A /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86DF332128D64F1200F30F3A /* CategoryActionCreator.swift */,
+				86DF332228D64F1200F30F3A /* CategoryProps.swift */,
+				86DF332328D64F1200F30F3A /* CategoryStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		86DF333228D66AEF00F30F3A /* KnowledgeCategory */ = {
+			isa = PBXGroup;
+			children = (
+				86DF333428D66AEF00F30F3A /* KnowledgeCategoryViewController.swift */,
+				86DF333528D66AEF00F30F3A /* Views */,
+				86DF333728D66AEF00F30F3A /* Store */,
+			);
+			path = KnowledgeCategory;
+			sourceTree = "<group>";
+		};
+		86DF333528D66AEF00F30F3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86DF333628D66AEF00F30F3A /* KnowledgeCategoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86DF333728D66AEF00F30F3A /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86DF333828D66AEF00F30F3A /* KnowledgeCategoryStore.swift */,
+				86DF333928D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift */,
+				86DF333A28D66AEF00F30F3A /* KnowledgeCategoryProps.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		86F636C728D6D054002C85CA /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				86F636C828D6D054002C85CA /* QuestionViewController.swift */,
+				86F636C928D6D054002C85CA /* Views */,
+				86F636CC28D6D054002C85CA /* Store */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		86F636C928D6D054002C85CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86F636CA28D6D054002C85CA /* QuestionView.swift */,
+				86F636DA28D6D6E8002C85CA /* QuestionAnswerView.swift */,
+				86F636D828D6D62F002C85CA /* QuestionInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86F636CC28D6D054002C85CA /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86F636CD28D6D054002C85CA /* QuestionActionCreator.swift */,
+				86F636CE28D6D054002C85CA /* QuestionProps.swift */,
+				86F636CF28D6D054002C85CA /* QuestionStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,30 +494,57 @@
 				86DF331328D6492500F30F3A /* UIColor+Generated.swift in Sources */,
 				86DF32CF28D63C3C00F30F3A /* AppCoordinator.swift in Sources */,
 				86DF32FF28D63F1900F30F3A /* HomeStore.swift in Sources */,
+				86DF332628D64F1200F30F3A /* CategoryView.swift in Sources */,
 				86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */,
+				86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */,
 				86DF330528D63F1900F30F3A /* KnowledgeStore.swift in Sources */,
+				86DF332728D64F1200F30F3A /* CategoryActionCreator.swift in Sources */,
 				86DF32FE28D63F1900F30F3A /* HomeView.swift in Sources */,
 				86DF32FB28D63F1900F30F3A /* ProfileStore.swift in Sources */,
+				86DF333C28D66AEF00F30F3A /* KnowledgeCategoryViewController.swift in Sources */,
 				86DF330828D63F4800F30F3A /* Redux.swift in Sources */,
 				86DF32F928D63F1900F30F3A /* ProfileView.swift in Sources */,
+				86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */,
+				86DF332928D64F1200F30F3A /* CategoryStore.swift in Sources */,
+				86DF333D28D66AEF00F30F3A /* KnowledgeCategoryView.swift in Sources */,
 				86DF330428D63F1900F30F3A /* KnowledgeActionCreator.swift in Sources */,
+				86DF333F28D66AEF00F30F3A /* KnowledgeCategoryActionCreator.swift in Sources */,
+				86DF331728D64E8500F30F3A /* Category.swift in Sources */,
 				86DF331128D6464700F30F3A /* UIImage+Generated.swift in Sources */,
 				86DF32D928D63DEE00F30F3A /* ProfileCoordinator.swift in Sources */,
+				86DF334028D66AEF00F30F3A /* KnowledgeCategoryProps.swift in Sources */,
+				86F636D128D6D054002C85CA /* QuestionView.swift in Sources */,
+				86DF332F28D6682F00F30F3A /* KnowledgeCategoryTypeView.swift in Sources */,
 				86DF330128D63F1900F30F3A /* HomeActionCreator.swift in Sources */,
 				86DF330228D63F1900F30F3A /* KnowledgeViewController.swift in Sources */,
 				86DF32FC28D63F1900F30F3A /* ProfileActionCreator.swift in Sources */,
+				86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */,
+				86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */,
+				86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */,
 				86DF330028D63F1900F30F3A /* HomeProps.swift in Sources */,
+				86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */,
 				86DF330C28D6412B00F30F3A /* CALayer+TU.swift in Sources */,
+				86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */,
+				86DF332528D64F1200F30F3A /* CategoryViewController.swift in Sources */,
+				86DF333E28D66AEF00F30F3A /* KnowledgeCategoryStore.swift in Sources */,
 				86DF32D128D63C8E00F30F3A /* Coordinating.swift in Sources */,
+				86F636DF28D6DD18002C85CA /* QuizProvider.swift in Sources */,
 				86DF330328D63F1900F30F3A /* KnowledgeView.swift in Sources */,
 				86DF32FA28D63F1900F30F3A /* ProfileProps.swift in Sources */,
+				86F636D728D6D314002C85CA /* ProgressView.swift in Sources */,
 				86DF330628D63F1900F30F3A /* KnowledgeProps.swift in Sources */,
+				86DF331528D64C5F00F30F3A /* HomeCategoryView.swift in Sources */,
 				86DF32D328D63CE100F30F3A /* TabBarCoordinator.swift in Sources */,
 				86DF32B528D63B3100F30F3A /* AppDelegate.swift in Sources */,
 				86DF32D528D63DE300F30F3A /* KnowledgeCoordinator.swift in Sources */,
+				86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */,
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
+				86F636DB28D6D6E8002C85CA /* QuestionAnswerView.swift in Sources */,
+				86F636D528D6D054002C85CA /* QuestionStore.swift in Sources */,
+				86F636D428D6D054002C85CA /* QuestionProps.swift in Sources */,
 				86DF32FD28D63F1900F30F3A /* HomeViewController.swift in Sources */,
 				86DF32D728D63DE800F30F3A /* HomeCoordinator.swift in Sources */,
+				86F636C428D6CDD4002C85CA /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

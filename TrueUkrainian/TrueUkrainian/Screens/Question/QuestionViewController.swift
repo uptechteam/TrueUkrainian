@@ -1,25 +1,27 @@
 //
-//  KnowledgeViewController.swift
+//  QuestionViewController.swift
 //  TrueUkrainian
 //
-//  Created by Oleksii Andriushchenko on 17.09.2022.
+//  Created by Oleksii Andriushchenko on 18.09.2022.
 //
 
 import Combine
 import UIKit
 
-protocol KnowledgeCoordinating: AnyObject {
-    func showCategory(_ category: Category)
+protocol QuestionCoordinating: AnyObject {
+    func didTapCloseQuiz()
+    func didFinishQuiz(activeQuiz: ActiveQuiz)
+    func didProceedNext(activeQuiz: ActiveQuiz)
 }
 
-public final class KnowledgeViewController: UIViewController {
+public final class QuestionViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = KnowledgeView()
-    private unowned let coordinator: KnowledgeCoordinating
+    private let contentView = QuestionView()
+    private unowned let coordinator: QuestionCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -27,7 +29,7 @@ public final class KnowledgeViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: KnowledgeCoordinating
+        coordinator: QuestionCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
@@ -56,24 +58,27 @@ public final class KnowledgeViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupUI() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            image: .back,
-            style: .plain,
-            target: nil,
-            action: nil
-        )
+        hidesBottomBarWhenPushed = true
     }
 
     private func setupBinding() {
-        contentView.onTapCategory = { [store] category in
-            store.dispatch(action: .categoryTapped(category))
+        contentView.onTapAnswer = { [store] index in
+            store.dispatch(action: .answerTapped(index))
+        }
+
+        contentView.onTapAction = { [store] in
+            store.dispatch(action: .actionTapped)
+        }
+
+        contentView.onTapClose = { [store] in
+            store.dispatch(action: .closeTapped)
         }
 
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
         state
-            .map(KnowledgeViewController.makeProps)
+            .map(QuestionViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
             }
@@ -87,8 +92,14 @@ public final class KnowledgeViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .showCategory(let category):
-            coordinator.showCategory(category)
+        case .close:
+            coordinator.didTapCloseQuiz()
+
+        case .nextQuestion(let quiz):
+            coordinator.didProceedNext(activeQuiz: quiz)
+
+        case .finish(let quiz):
+            coordinator.didFinishQuiz(activeQuiz: quiz)
         }
     }
 }
