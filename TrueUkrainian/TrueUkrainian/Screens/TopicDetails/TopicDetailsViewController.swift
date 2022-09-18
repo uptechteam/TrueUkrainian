@@ -1,25 +1,25 @@
 //
-//  KnowledgeCategoryViewController.swift
+//  TopicDetailsViewController.swift
 //  TrueUkrainian
 //
-//  Created by Oleksii Andriushchenko on 17.09.2022.
+//  Created by Oleksii Andriushchenko on 18.09.2022.
 //
 
 import Combine
 import UIKit
 
-protocol KnowledgeCategoryCoordinating: AnyObject {
-    func didTapTopic(_ details: TopicDetails)
+public protocol TopicDetailsCoordinating: AnyObject {
+
 }
 
-public final class KnowledgeCategoryViewController: UIViewController {
+final class TopicDetailsViewController: UIViewController {
 
     // MARK: - Properties
 
     private let store: Store
     private let actionCreator: ActionCreator
-    private let contentView = KnowledgeCategoryView()
-    private unowned let coordinator: KnowledgeCategoryCoordinating
+    private let contentView = TopicDetailsView()
+    private unowned let coordinator: TopicDetailsCoordinating
     private var cancellables = [AnyCancellable]()
 
     // MARK: - Lifecycle
@@ -27,13 +27,12 @@ public final class KnowledgeCategoryViewController: UIViewController {
     init(
         store: Store,
         actionCreator: ActionCreator,
-        coordinator: KnowledgeCategoryCoordinating
+        coordinator: TopicDetailsCoordinating
     ) {
         self.store = store
         self.actionCreator = actionCreator
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
-        setupUI()
     }
 
     required init?(coder: NSCoder) {
@@ -56,26 +55,14 @@ public final class KnowledgeCategoryViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupUI() {
-        hidesBottomBarWhenPushed = true
         navigationItem.title = "Назва"
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            image: .back,
-            style: .plain,
-            target: nil,
-            action: nil
-        )
     }
 
     private func setupBinding() {
-        contentView.onTapItem = { [store] indexPath in
-            store.dispatch(action: .itemTapped(indexPath))
-        }
-
         let state = store.$state.removeDuplicates()
             .subscribe(on: DispatchQueue.main)
 
-        state
-            .map(KnowledgeCategoryViewController.makeProps)
+        state.map(TopicDetailsViewController.makeProps)
             .sink { [contentView] props in
                 contentView.render(props: props)
             }
@@ -84,16 +71,7 @@ public final class KnowledgeCategoryViewController: UIViewController {
         state
             .first()
             .sink { [unowned self] state in
-                switch state.category {
-                case .country:
-                    navigationItem.title = "Держава"
-
-                case .history:
-                    navigationItem.title = "Історія України"
-
-                case .culture:
-                    navigationItem.title = "Культура України"
-                }
+                navigationItem.title = state.topic.name
             }
             .store(in: &cancellables)
         
@@ -105,8 +83,7 @@ public final class KnowledgeCategoryViewController: UIViewController {
     
     private func navigate(by route: Route) {
         switch route {
-        case .showTopic(let topic):
-            coordinator.didTapTopic(topic)
+            
         }
     }
 }

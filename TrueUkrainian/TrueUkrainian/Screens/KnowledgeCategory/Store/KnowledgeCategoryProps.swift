@@ -9,10 +9,13 @@ extension KnowledgeCategoryViewController {
     static func makeProps(from state: State) -> KnowledgeCategoryView.Props {
         return .init(
             backColor: state.category.mainColor,
-            items: [
-                .init(title: "Конституція України", description: "Основний Закон України. Ухвалений 28 червня 1996 року на 5-й сесії Верховної Ради України 2-го скликання"),
-                .init(title: "Назва 1", description: "Опис")
-            ]
+            items: makeItems(state: state)
         )
+    }
+
+    private static func makeItems(state: State) -> [KnowledgeCategoryCell.Props] {
+        return state.topics.map { topic in
+            return KnowledgeCategoryCell.Props(title: topic.name, description: topic.description)
+        }
     }
 }

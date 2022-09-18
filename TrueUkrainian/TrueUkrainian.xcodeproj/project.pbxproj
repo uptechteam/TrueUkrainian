@@ -84,6 +84,15 @@
 		86F6371928D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */; };
 		86F6371B28D6FF5F002C85CA /* String+TU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371A28D6FF5F002C85CA /* String+TU.swift */; };
 		86F6371D28D70482002C85CA /* KnowledgeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371C28D70482002C85CA /* KnowledgeCategoryCell.swift */; };
+		86F6371F28D709CE002C85CA /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6371E28D709CE002C85CA /* Topic.swift */; };
+		86F6372128D709FD002C85CA /* TopicsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6372028D709FD002C85CA /* TopicsProvider.swift */; };
+		86F6372328D70A6C002C85CA /* TopicsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6372228D70A6C002C85CA /* TopicsDetails.swift */; };
+		86F637C528D70BAA002C85CA /* TopicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637BD28D70BAA002C85CA /* TopicDetailsViewController.swift */; };
+		86F637C628D70BAA002C85CA /* TopicDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637BF28D70BAA002C85CA /* TopicDetailsView.swift */; };
+		86F637C728D70BAA002C85CA /* TopicDetailsActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637C128D70BAA002C85CA /* TopicDetailsActionCreator.swift */; };
+		86F637C828D70BAA002C85CA /* TopicDetailsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637C228D70BAA002C85CA /* TopicDetailsStore.swift */; };
+		86F637C928D70BAA002C85CA /* TopicDetailsProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637C328D70BAA002C85CA /* TopicDetailsProps.swift */; };
+		86F637CB28D70C38002C85CA /* TopicDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F637CA28D70C38002C85CA /* TopicDetails.swift */; };
 		A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */; };
 		A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185428D6EEF1001C4137 /* ProfileRatingView.swift */; };
 		A154185728D6EF4A001C4137 /* ProfileResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A154185628D6EF4A001C4137 /* ProfileResultView.swift */; };
@@ -169,6 +178,15 @@
 		86F6371828D6F8EB002C85CA /* UICollectionViewDiffableDataSource+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+TU.swift"; sourceTree = "<group>"; };
 		86F6371A28D6FF5F002C85CA /* String+TU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TU.swift"; sourceTree = "<group>"; };
 		86F6371C28D70482002C85CA /* KnowledgeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCategoryCell.swift; sourceTree = "<group>"; };
+		86F6371E28D709CE002C85CA /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		86F6372028D709FD002C85CA /* TopicsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsProvider.swift; sourceTree = "<group>"; };
+		86F6372228D70A6C002C85CA /* TopicsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsDetails.swift; sourceTree = "<group>"; };
+		86F637BD28D70BAA002C85CA /* TopicDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailsViewController.swift; sourceTree = "<group>"; };
+		86F637BF28D70BAA002C85CA /* TopicDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailsView.swift; sourceTree = "<group>"; };
+		86F637C128D70BAA002C85CA /* TopicDetailsActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailsActionCreator.swift; sourceTree = "<group>"; };
+		86F637C228D70BAA002C85CA /* TopicDetailsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailsStore.swift; sourceTree = "<group>"; };
+		86F637C328D70BAA002C85CA /* TopicDetailsProps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailsProps.swift; sourceTree = "<group>"; };
+		86F637CA28D70C38002C85CA /* TopicDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetails.swift; sourceTree = "<group>"; };
 		A154185228D6EEB6001C4137 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
 		A154185428D6EEF1001C4137 /* ProfileRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingView.swift; sourceTree = "<group>"; };
 		A154185628D6EF4A001C4137 /* ProfileResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResultView.swift; sourceTree = "<group>"; };
@@ -232,6 +250,9 @@
 				86DF331628D64E8500F30F3A /* Category.swift */,
 				86F636DC28D6DC70002C85CA /* Quiz.swift */,
 				86F636E028D6DE6A002C85CA /* ActiveQuiz.swift */,
+				86F6372228D70A6C002C85CA /* TopicsDetails.swift */,
+				86F6371E28D709CE002C85CA /* Topic.swift */,
+				86F637CA28D70C38002C85CA /* TopicDetails.swift */,
 			);
 			path = DomainModels;
 			sourceTree = "<group>";
@@ -239,6 +260,7 @@
 		86DF32CA28D63B6000F30F3A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				86F637BB28D70BAA002C85CA /* TopicDetails */,
 				86F6370128D6F74E002C85CA /* Results */,
 				86F636EC28D6EBF8002C85CA /* Congrats */,
 				86F636E228D6E7E0002C85CA /* Alert */,
@@ -256,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				86F636DE28D6DD18002C85CA /* QuizProvider.swift */,
+				86F6372028D709FD002C85CA /* TopicsProvider.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -545,6 +568,34 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		86F637BB28D70BAA002C85CA /* TopicDetails */ = {
+			isa = PBXGroup;
+			children = (
+				86F637BD28D70BAA002C85CA /* TopicDetailsViewController.swift */,
+				86F637BE28D70BAA002C85CA /* Views */,
+				86F637C028D70BAA002C85CA /* Store */,
+			);
+			path = TopicDetails;
+			sourceTree = "<group>";
+		};
+		86F637BE28D70BAA002C85CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86F637BF28D70BAA002C85CA /* TopicDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86F637C028D70BAA002C85CA /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				86F637C128D70BAA002C85CA /* TopicDetailsActionCreator.swift */,
+				86F637C228D70BAA002C85CA /* TopicDetailsStore.swift */,
+				86F637C328D70BAA002C85CA /* TopicDetailsProps.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -622,11 +673,13 @@
 				86F6371528D6F8C1002C85CA /* ReusableCell.swift in Sources */,
 				86DF32FF28D63F1900F30F3A /* HomeStore.swift in Sources */,
 				86DF332628D64F1200F30F3A /* CategoryView.swift in Sources */,
+				86F6371F28D709CE002C85CA /* Topic.swift in Sources */,
 				86DF330E28D6415100F30F3A /* UIView+TU.swift in Sources */,
 				86F636DD28D6DC70002C85CA /* Quiz.swift in Sources */,
 				86DF330528D63F1900F30F3A /* KnowledgeStore.swift in Sources */,
 				A154185528D6EEF1001C4137 /* ProfileRatingView.swift in Sources */,
 				86DF332728D64F1200F30F3A /* CategoryActionCreator.swift in Sources */,
+				86F637CB28D70C38002C85CA /* TopicDetails.swift in Sources */,
 				86DF32FE28D63F1900F30F3A /* HomeView.swift in Sources */,
 				86F6370B28D6F74E002C85CA /* ResultsViewController.swift in Sources */,
 				86DF32FB28D63F1900F30F3A /* ProfileStore.swift in Sources */,
@@ -635,6 +688,7 @@
 				86DF32F928D63F1900F30F3A /* ProfileView.swift in Sources */,
 				86F636F828D6EBF8002C85CA /* CongratsActionCreator.swift in Sources */,
 				86F636F928D6EBF8002C85CA /* CongratsProps.swift in Sources */,
+				86F637C628D70BAA002C85CA /* TopicDetailsView.swift in Sources */,
 				86F636C228D6CCD9002C85CA /* CategorySettingsView.swift in Sources */,
 				86F636F628D6EBF8002C85CA /* CongratsViewController.swift in Sources */,
 				86F6371728D6F8D9002C85CA /* UICollectionView+TU.swift in Sources */,
@@ -658,15 +712,19 @@
 				86DF32FC28D63F1900F30F3A /* ProfileActionCreator.swift in Sources */,
 				86F6370C28D6F74E002C85CA /* ResultsView.swift in Sources */,
 				86F636D028D6D054002C85CA /* QuestionViewController.swift in Sources */,
+				86F637C728D70BAA002C85CA /* TopicDetailsActionCreator.swift in Sources */,
+				86F6372128D709FD002C85CA /* TopicsProvider.swift in Sources */,
 				A154185328D6EEB6001C4137 /* ProfileAvatarView.swift in Sources */,
 				86F6371D28D70482002C85CA /* KnowledgeCategoryCell.swift in Sources */,
 				86F636D928D6D62F002C85CA /* QuestionInfoView.swift in Sources */,
 				86F636D328D6D054002C85CA /* QuestionActionCreator.swift in Sources */,
 				86DF330028D63F1900F30F3A /* HomeProps.swift in Sources */,
 				86DF332828D64F1200F30F3A /* CategoryProps.swift in Sources */,
+				86F6372328D70A6C002C85CA /* TopicsDetails.swift in Sources */,
 				86F636FE28D6F220002C85CA /* CongratsProgressView.swift in Sources */,
 				86DF330C28D6412B00F30F3A /* CALayer+TU.swift in Sources */,
 				86F636E128D6DE6A002C85CA /* ActiveQuiz.swift in Sources */,
+				86F637C928D70BAA002C85CA /* TopicDetailsProps.swift in Sources */,
 				86DF332528D64F1200F30F3A /* CategoryViewController.swift in Sources */,
 				86DF333E28D66AEF00F30F3A /* KnowledgeCategoryStore.swift in Sources */,
 				86DF32D128D63C8E00F30F3A /* Coordinating.swift in Sources */,
@@ -679,7 +737,9 @@
 				86DF331528D64C5F00F30F3A /* HomeCategoryView.swift in Sources */,
 				86DF32D328D63CE100F30F3A /* TabBarCoordinator.swift in Sources */,
 				86DF32B528D63B3100F30F3A /* AppDelegate.swift in Sources */,
+				86F637C528D70BAA002C85CA /* TopicDetailsViewController.swift in Sources */,
 				86DF32D528D63DE300F30F3A /* KnowledgeCoordinator.swift in Sources */,
+				86F637C828D70BAA002C85CA /* TopicDetailsStore.swift in Sources */,
 				86DF332D28D664C900F30F3A /* BaseNavigationController.swift in Sources */,
 				86DF32F828D63F1900F30F3A /* ProfileViewController.swift in Sources */,
 				86F636E828D6E809002C85CA /* AlertContentView.swift in Sources */,
