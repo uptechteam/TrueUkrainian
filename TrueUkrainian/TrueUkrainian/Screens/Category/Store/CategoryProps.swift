@@ -18,7 +18,9 @@ extension CategoryViewController {
     private static func makeDescription(state: State) -> String {
         switch state.category {
         case .country:
-            return "Опис"
+            return """
+            Механізм роботи державної влади, освновних її огранів. Розподілення влади на різних рівнях (кабінец міністрів, органи місцевого самоврядування)
+            """
 
         case .history:
             return """
@@ -26,7 +28,7 @@ extension CategoryViewController {
 """
 
         case .culture:
-            return "Опис"
+            return "Цікаві традиції, духовна спадшища, неймовірні факти та генії української культури. "
         }
     }
 }
