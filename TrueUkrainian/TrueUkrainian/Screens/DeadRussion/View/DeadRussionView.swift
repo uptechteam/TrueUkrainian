@@ -9,10 +9,6 @@ import UIKit
 
 final class DeadRussionView: UIView {
 
-    struct Props: Equatable {
-
-    }
-
     // MARK: - Properties
 
     private let backgroundImageView = UIImageView()
@@ -125,11 +121,5 @@ final class DeadRussionView: UIView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -101)
         ])
-    }
-
-    // MARK: - Public methods
-
-    func render(props: Props) {
-
     }
 }

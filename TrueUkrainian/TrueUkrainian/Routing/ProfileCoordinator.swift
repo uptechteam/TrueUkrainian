@@ -58,7 +58,8 @@ final class ProfileCoordinator: NSObject, Coordinating {
 
 extension ProfileCoordinator: ProfileCoordinating {
     func didTapRating() {
-
+        let viewController = MyFriendsViewController()
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func didTapDictionary() {
